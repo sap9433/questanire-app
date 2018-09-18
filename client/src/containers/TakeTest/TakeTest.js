@@ -26,28 +26,13 @@ export class TakeTest extends Component {
   }
 
   componentDidMount = () => {
-  
-  };
-
-  componentWillUnmount() {
-
-  }
-  
-  
-
-  handleCancelTest = () => {
-    this.setState({ showStartModal: false });
-    this.props.history.push('/dashboard');
-  }
-
-  handleStartTest = () => {
     const {
-      match: { params: { testid } }
+      match: { params: { count } }
     } = this.props;
 
     this.setState({ testStarted: true })
 
-    const url = `/api/start-test/${testid}`;
+    const url = `/api/start-test/${count}`;
     
     ajax.getJSON(url)
     .subscribe(
@@ -57,13 +42,19 @@ export class TakeTest extends Component {
               startTestError: data.error
             })
           } else{
-            this.setState({ showStartModal: false });
             this.setState({ testStarted: true });
-            this.handleRunEvents();
           }
         },
         err => this.setState({ startTestError: JSON.stringify(err) })
     );
+  };
+
+  handleCancelTest = () => {
+    const {
+      match: { params: { count } }
+    } = this.props;
+    this.setState({ showStartModal: false });
+    this.props.history.push(`/enter/${count}`);
   }
 
   handleTestsubmit = event => {
@@ -98,23 +89,6 @@ export class TakeTest extends Component {
     this.seconds = seconds;
   }
 
-  calculateTime = () => {
-    const fullTime = this.fullTIme;
-    const minutes = this.minutes;
-    const seconds = this.seconds;
-
-    const criteria = 80 / 100;
-    if (minutes * 60 + seconds >= (1 - criteria) * fullTime) {
-      return true;
-    }
-    return false;
-  }
-
-  // Time Maximization - Did candidate utilize 80% of the time (Yes/No)
-  handleTestTime = () => {
-    console.log('candidate test time over 80%? : ', this.calculateTime());
-  }
-
   render() {
 
     return ( 
@@ -125,11 +99,7 @@ export class TakeTest extends Component {
             <Grid item md={3} xs={3}>
               <div className="logo__img" />
             </Grid>
-            <Grid item md={4} xs={4}>
-              <div className="editToolbar">
-              </div>
-            </Grid>
-            <Grid item md={3} xs={3}>
+            <Grid item md={7} xs={7}>
               <Timer 
                 onFinish={this.handleFinishTest} 
                 onRender={this.handleCountTimer}
@@ -149,6 +119,9 @@ export class TakeTest extends Component {
             </Grid>
           </Grid>
         </div>
+      </Grid>
+      <Grid item xs={12}>
+        Some
       </Grid>
     </Grid>
     );

@@ -1,27 +1,6 @@
-# `Nugget AI App` 
+# `Certent Conf App AI App` 
 
 ![](./usage-demo.gif)
-
-### Prod App 
-
-https://nuggetai.com ....
-
-### Local Setup
-
-1) Install mysql (username - sapy , password empty]) and run migration script in mysqldb.sql. 
-2) redis with no password , 
-3) mongo with no password 
-4) kafka (optional) 
-
-Keep all the options (installation dir , port , config ) default while setting up the above
-
-Nugegt             |  AI
-:-------------------------:|:-------------------------:
-![](./client/src/images/logo.png)  |  ![](./client/src/images/game.png)
-
-### Detailed blog post
-
-We have a [detailed blog post](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) that explains this repository.
 
 ## Running locally
 

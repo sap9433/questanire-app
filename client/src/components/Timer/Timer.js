@@ -21,8 +21,8 @@ export default class Timer extends Component {
     .subscribe(
         data => {
           console.log("data ", data);
-          const currentTime = new Date(data.currentTime);
-          const startedAt = new Date(data.startedAt);
+          const currentTime = new Date();
+          const startedAt = new Date();
           const result = currentTime - startedAt;
           console.log("result ", result);
     

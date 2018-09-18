@@ -1,14 +1,14 @@
 {
-  "name": "NuggetAIApp",
-  "description": "Nugget AI App for cognitive intelligence",
-  "author": "nugget.ai Team",
+  "name": "CertentApp",
+  "description": "Certent Conf App",
+  "author": "Saptarshi",
   "license": "MIT",
   "version": "0.1.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aelshayeb/nugget.git"
+    "url": "https://github.com/sap9433/certent"
   },
-  "homepage": "httpsa://app.nugget.ai",
+  "homepage": "https://github.com/sap9433/certent",
   "keywords": [
     "react",
     "webpack",
