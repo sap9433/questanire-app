@@ -21,7 +21,8 @@ export class TakeTest extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      testStarted: true
+      testStarted: true,
+      questions: []
     }
   }
 
@@ -32,7 +33,7 @@ export class TakeTest extends Component {
 
     this.setState({ testStarted: true })
 
-    const url = `/api/start-test/${count}`;
+    const url = `/api/gettest/${count}`;
     
     ajax.getJSON(url)
     .subscribe(
@@ -42,7 +43,7 @@ export class TakeTest extends Component {
               startTestError: data.error
             })
           } else{
-            this.setState({ testStarted: true });
+            this.setState({ testStarted: true, questions: data.questions });
           }
         },
         err => this.setState({ startTestError: JSON.stringify(err) })
@@ -121,7 +122,13 @@ export class TakeTest extends Component {
         </div>
       </Grid>
       <Grid item xs={12}>
-        Some
+        {
+          this.state.questions.map((question, ind) => {
+            return(
+              <div>{question.text}</div>
+            )
+          })
+        }
       </Grid>
     </Grid>
     );

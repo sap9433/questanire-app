@@ -33,22 +33,11 @@ app.use(bodyParser.json());
 app.post('/api/signin', authApi.signinRoute);
 app.post('/api/candidatelogin', authApi.candidateLogin);
 app.get('/api/getauth', authApi.getAuth);
-
-
 app.get('/api/logout', authApi.logout);
-
-
-// Get new Test
 app.get('/api/gettest/:testid', assesmentApi.getATest);
-
 app.post('/api/answer/submit', assesmentApi.answerSubmitted);
 
-//If he is opening Taketest page and a candidate . Create a mongo entry that test started.
-app.get('/api/start-test/:testid', takeTestManager.testStarted);
-
-
 app.use(express.static(path.join(__dirname, 'client', 'build')));
-
 app.get('*', function (req, res) {
    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
  });

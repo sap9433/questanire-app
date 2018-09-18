@@ -1,5 +1,7 @@
+const questions = require('./questions.js');
+
 exports.getATest = function (req, res) {
-  res.json({hi: 'hi'});
+  res.json(questions);
 }
 
 exports.answerSubmitted = function (req, res) {
