@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TakeTest with Data createNewSection should be called on mount 1`] = `
+Array [
+  "Problem",
+  "Collect Information",
+  "Engender Ideas",
+  "Recommend a Solution",
+]
+`;

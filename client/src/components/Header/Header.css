@@ -1,0 +1,51 @@
+a, u {
+  text-decoration: none !important; }
+
+.brand {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  background: url("../../images/logo.png") no-repeat center center;
+  width: 50px !important;
+  height: 50px !important;
+  background-size: 80%;
+  margin: 0 10px 0 0;
+  border-radius: 25px; }
+
+.AppBar {
+  background-color: fbfbfb !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #e8e8e8;
+  position: relative !important;
+  z-index: 2 !important; }
+
+.navbarItem {
+  display: block !important; }
+
+.nav__icons {
+  position: relative;
+  top: 5px;
+  float: right; }
+  .nav__icons .profile__but {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 5px; }
+  .nav__icons .register_but {
+    margin-top: 10px; }
+
+@media screen and (min-width: 768px) {
+  .navbarItem {
+    width: 750px; } }
+
+@media screen and (min-width: 992px) {
+  .navbarItem {
+    width: 970px; } }
+
+@media screen and (min-width: 1200px) {
+  .navbarItem {
+    width: 1170px; } }
+
+.navbarItem {
+  margin: 0 auto;
+  padding: 0 15px; }

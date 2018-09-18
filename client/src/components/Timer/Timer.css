@@ -1,0 +1,13 @@
+.timer {
+  text-align: right;
+  color: white;
+  position: absolute;
+  top: 5px;
+  display: inline; }
+  .timer span {
+    margin-left: 5px;
+    font-size: 30px;
+    top: 16px; }
+  .timer p {
+    font-size: 16px;
+    top: 0px; }

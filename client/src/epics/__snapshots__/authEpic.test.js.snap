@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`clientSofLogin clientSoftLogin success 1`] = `
+Array [
+  Array [
+    "/api/candidatelogin",
+    Object {
+      "id": 1,
+    },
+    Object {
+      "Content-Type": "application/json",
+    },
+  ],
+]
+`;
+
+exports[`doSignin doSignin success 1`] = `
+Array [
+  Array [
+    "/api/signin",
+    Object {
+      "email": "mock@mail.com",
+      "password": "password1",
+    },
+    Object {
+      "Content-Type": "application/json",
+    },
+  ],
+]
+`;
+
+exports[`register register success 1`] = `
+Array [
+  Array [
+    "/api/register",
+    Object {
+      "email": "mock@mail.com",
+      "password": "password1",
+    },
+    Object {
+      "Content-Type": "application/json",
+    },
+  ],
+]
+`;
