@@ -43,7 +43,7 @@ export class TakeTest extends Component {
               startTestError: data.error
             })
           } else{
-            this.setState({ testStarted: true, questions: data.questions });
+            this.setState({ testStarted: true, questions: data });
           }
         },
         err => this.setState({ startTestError: JSON.stringify(err) })
