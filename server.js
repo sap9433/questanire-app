@@ -42,8 +42,11 @@ app.get('/api/logout', authApi.logout);
 app.get('/api/gettest/:testid', assesmentApi.getATest);
 app.post('/api/answer/submit', assesmentApi.answerSubmitted);
 
+app.get('/static', express.static(path.join(__dirname, 'client', 'build')));
+
 app.use(express.static(path.join(__dirname, 'client', 'build')));
-app.get('*', function (req, res) {
+
+app.use('*', function (req, res) {
    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
  });
 
