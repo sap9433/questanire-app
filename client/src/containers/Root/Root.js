@@ -54,10 +54,6 @@ const CSignIn = Loadable({
   loader: () => import('../CSignIn/CSignIn'),
   loading: Loading,
 });
-const CRegister = Loadable({
-  loader: () => import('../CRegister/CRegister'),
-  loading: Loading,
-});
 
 class Root extends Component {
 
@@ -120,7 +116,6 @@ class Root extends Component {
               <Route path="/onboard/:testid" render={(props) => <COnboard user={user} {...props}/>}/>
               <Route path="/taketest/:testid" render={(props) => <TakeTest user={user} {...props}/>}/>
               <Route path="/candidatelogin" component={CSignIn}/>
-              <Route path="/candidateregister" component={CRegister}/>
               <Route component={NotFound} />
            </Switch>
           </div>
