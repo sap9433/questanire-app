@@ -1,7 +1,9 @@
 import React, { Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
+import { ajax } from 'rxjs/observable/dom/ajax';
 import { Add } from '@material-ui/icons';
 import './Results.css';
+import _ from 'lodash';
 
 import {
 	Grid,
@@ -16,18 +18,28 @@ export default class Results extends Component {
 	constructor(props) {
 		super(props); // eslint-disable-line
 		this.state = { // eslint-disable-line
-			isPaneOpen: false, // eslint-disable-line
-			stepvalue: 1, // eslint-disable-line
-			open: false,
-			showPipModal: false,
-			pipelines: [{ title: 'Digital business team', benchmark: true }],
-		};
-
-		this.tableData = {
-			fullname: '',
-			score: 0
+			leaderboard: []
 		};
 	}
+
+	componentDidMount = () => {
+	    const url = `/api/leaderboard`;
+	    ajax.getJSON(url)
+	    .subscribe(
+	        data => {
+	          if(data.error){
+	            this.setState({
+	              error: data.error
+	            })
+	          } else{
+	          	const leaderboard = data.msg.map((row) => row.split('|'));
+	          	debugger
+	            this.setState({leaderboard});
+	          }
+	        },
+	        err => this.setState({ startTestError: JSON.stringify(err) })
+	    );
+  	};
 
 	render() {
   	return (
@@ -39,7 +51,13 @@ export default class Results extends Component {
 							item 
 							xs={12}
 						>
-						Lo karlo baat 
+						{this.state.leaderboard.map((user, i) =>{
+							return(
+								<div className='leader_row'>
+									{user.join(',')}
+								</div>
+							)
+						})}
 					</Grid>
 				</Grid>
 			</Fragment>

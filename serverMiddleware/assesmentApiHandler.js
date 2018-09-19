@@ -31,6 +31,12 @@ exports.answerSubmitted = function (req, res) {
     }
     return res.json({msg: `${req.session.user.name} Your response is successfully saved`});
   }); 
-  
+}
+
+exports.getLeaderBoard = function (req, res) {
+  fs.readFile('./leaderboar.txt', 'utf8', function(err, contents) {
+    const allUser = contents.split('\n');
+    return res.json({msg: allUser});
+  });
 }
 

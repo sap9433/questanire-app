@@ -41,6 +41,7 @@ app.get('/api/getauth', authApi.getAuth);
 app.get('/api/logout', authApi.logout);
 app.get('/api/gettest/:testid', assesmentApi.getATest);
 app.post('/api/answer/submit', assesmentApi.answerSubmitted);
+app.get('/api/leaderboard', assesmentApi.getLeaderBoard);
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
