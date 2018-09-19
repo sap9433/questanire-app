@@ -6,10 +6,11 @@ exports.getATest = function (req, res) {
   return res.json(questions);
 }
 
-getScore = function(req){
+getScore = function(req) {
 	req.body.map((ans, ind) => {
 		console.log(JSON.stringify(ans));
 	})
+	
 }
 
 exports.answerSubmitted = function (req, res) {

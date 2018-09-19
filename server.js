@@ -24,6 +24,11 @@ app.use(session({
   saveUninitialized: false
 }));
 
+global.leaderboard = {
+	noOfQuestion: 5,
+	timeFrame: 30
+}; 
+
 // Since version 1.5.0, the cookie-parser middleware no longer needs to be used for this module to work
 app.use(bodyParser.json());
 
