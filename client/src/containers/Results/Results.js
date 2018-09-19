@@ -22,8 +22,8 @@ export default class Results extends Component {
 		};
 	}
 
-	componentDidMount = () => {
-	    const url = `/api/leaderboard`;
+	getLeaderBoard(){
+		const url = `/api/leaderboard`;
 	    ajax.getJSON(url)
 	    .subscribe(
 	        data => {
@@ -39,6 +39,11 @@ export default class Results extends Component {
 	        },
 	        err => this.setState({ startTestError: JSON.stringify(err) })
 	    );
+	    setTimeout(this.getLeaderBoard.bind(this), 18000);
+	}
+
+	componentDidMount = () => {
+	    this.getLeaderBoard();
   	};
 
 	render() {
