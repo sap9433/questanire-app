@@ -28,12 +28,12 @@ export class TakeTest extends Component {
 
   componentDidMount = () => {
     const {
-      match: { params: { count } }
+      match: { params: { testid } }
     } = this.props;
 
     this.setState({ testStarted: true })
 
-    const url = `/api/gettest/${count}`;
+    const url = `/api/gettest/${testid}`;
     
     ajax.getJSON(url)
     .subscribe(
@@ -52,10 +52,10 @@ export class TakeTest extends Component {
 
   handleCancelTest = () => {
     const {
-      match: { params: { count } }
+      match: { params: { testid } }
     } = this.props;
     this.setState({ showStartModal: false });
-    this.props.history.push(`/enter/${count}`);
+    this.props.history.push(`/enter/${testid}`);
   }
 
   handleTestsubmit = event => {
@@ -65,22 +65,17 @@ export class TakeTest extends Component {
       history: { push },
       submitAssesment
     } = this.props;
-    
-    // events
-    this.handleSendEventsOnSubmit();
-    this.handleFinishTest();
-    //
-    
-    const submitData = {
-      assementId: testid,
-      browser: navigator.appVersion,
-      sectionData: this.getSendSectionDataEvent()
-    };
-
-    console.log('submit data: ', submitData);
-    submitAssesment(submitData);
-
-    push("/candidatelogin");
+    const data = this.ansform;
+    let result = [];
+    for(let i=0; i < testid; i++ ){
+      result.push({
+        text: data[`text${i}`].value,
+        ans: data[`radio${i}`].value
+      })
+    }
+    debugger
+    submitAssesment(result);
+    push(`/enter/${testid}`);
   };
 
 
@@ -122,50 +117,26 @@ export class TakeTest extends Component {
         </div>
       </Grid>
       <Grid item xs={12}>
+        <form ref={form => this.ansform = form}>
         {
           this.state.questions.map((question, ind) => {
             return(
-              <div>
-                {question.text}
+              <div key={ind}>
+                <input className="question" name={`text${ind}`} type="text" value={question.text} disabled /> 
                 {
                   question.options.map((option, indx) => {
                     return(
-                      <div> {option} </div>
+                      <div className="radio" key={indx}>
+                        <input type="radio" value={option} name={`radio${ind}`}/> {option}
+                      </div>
                     )
                   })
                 }
-                <div className="container">
-                    <div className="row">
-                      <div className="col-sm-12">
-
-                        <form>
-                          <div className="radio">
-                            <label>
-                              <input type="radio" value="option1" checked={true} />
-                              Option 1
-                            </label>
-                          </div>
-                          <div className="radio">
-                            <label>
-                              <input type="radio" value="option2" />
-                              Option 2
-                            </label>
-                          </div>
-                          <div className="radio">
-                            <label>
-                              <input type="radio" value="option3" />
-                              Option 3
-                            </label>
-                          </div>
-                        </form>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
+             </div>
             )
           })
         }
+        </form>
       </Grid>
     </Grid>
     );
