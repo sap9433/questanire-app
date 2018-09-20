@@ -7,14 +7,14 @@ exports.getATest = function (req, res) {
 }
 
 getScore = function(req) {
-  const questionCount = req.body.length;
+  const questionCount = req.body.ans.length;
   let marks = 0;
 
-	req.body.map((ans, ind) => {
+	req.body.ans.map((ans, ind) => {
 	    const isMatch = _.find(questions, {text: ans.text, ans: [ans.ans]});
         marks += isMatch ? (1.0/questionCount) : 0;
 	})
-	return marks;
+	return (marks * 1000 - req.body.time).toFixed(2);
 }
 
 exports.answerSubmitted = function (req, res) {
@@ -35,7 +35,8 @@ exports.answerSubmitted = function (req, res) {
 
 exports.getLeaderBoard = function (req, res) {
   fs.readFile('./leaderboar.txt', 'utf8', function(err, contents) {
-    const allUser = contents.split('\n');
+    let allUser = contents.split('\n');
+    allUser.splice(-1,1);
     return res.json({msg: allUser});
   });
 }

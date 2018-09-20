@@ -77,23 +77,6 @@ export function authDetails(state = initialState, action) {
         user: null
       });
 
-    case REGISTRATION_START:
-      return Object.assign({}, state, {
-        isRegistering: true
-      });
-
-    case REGISTRATION_SUCCESS:
-      return Object.assign({}, state, {
-        isRegistering: false,
-        status: action.payload.response
-      });
-
-    case REGISTRATION_FAILED:
-      return Object.assign({}, state, {
-        isRegistering: false,
-        status: action.payload.response,
-      });
-
     default:
       return state;
   }

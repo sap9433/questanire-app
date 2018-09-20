@@ -90,27 +90,3 @@ export function signinFailed(payload) {
   };
 }
 
-export function register(payload) {
-  return {
-    type: REGISTRATION_START,
-    payload
-  };
-}
-
-// on successful
-export function registerFulfilled(payload) {
-  return {
-    type: REGISTRATION_SUCCESS,
-    payload
-  };
-}
-
-// on fail
-export function registerFailed(payload) {
-  return {
-    type: REGISTRATION_FAILED,
-    payload
-  };
-}
-
-

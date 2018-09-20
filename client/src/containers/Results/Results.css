@@ -1,77 +1,25 @@
 .result_wrapper {
   margin-top: 20px; }
 
-.paper {
-  padding: 20px; }
-
-.settingsIcon {
-  text-align: right;
-  float: right; }
-
-.helpIcon:hover {
-  background: none;
-  padding: 0;
-  margin: 0; }
-
-.helpIcon {
-  position: relative;
-  right: 20px;
-  bottom: 8px; }
-
 .inline {
   display: inline-block; }
 
 .lineheight {
   margin-top: 10px; }
 
-.linkWrapper {
-  width: calc(100% - 150px);
-  display: inline-block; }
+.leader_row {
+  border: 1px solid #dacaca;
+  padding: 14px;
+  margin: 2px;
+  border-radius: 2px; }
 
-.result_slider {
-  z-index: 999;
-  position: relative; }
-
-.tab_container {
-  margin-left: 0; }
-  .tab_container .copy_link {
-    margin-top: 20px; }
-
-.challenge .challenge_header {
-  font-weight: bold;
-  font-size: 22px; }
-
-.challenge .challenge_timestamp {
-  font-size: 11px;
-  color: #979797;
-  margin: 15px 0; }
-
-.challenge .challenge_desc {
-  width: 80%;
-  height: 70px;
-  resize: none;
-  background-color: white;
-  color: #979797;
-  border-color: #979797;
-  border-radius: 3px;
-  font-size: 11px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  padding: 10px; }
-
-.add_pipeline_but {
-  width: 200px;
-  background-color: #080808;
-  color: #ffdf51;
-  font-weight: bolder;
-  font-size: 16px;
-  text-transform: none;
+.marks {
+  border: 1px solid #bebee4;
+  border-radius: 15%;
+  padding: 0.5%;
+  margin-top: -0.5%;
+  display: inline-block;
   float: right; }
-  .add_pipeline_but:hover {
-    background-color: #494949; }
 
-.relationship_card {
-  margin-top: 20px;
-  padding: 0px !important; }
-
-.pipeline_wrapper {
-  margin-top: 20px; }
+.name {
+  color: orange; }

@@ -90,8 +90,7 @@ export class TakeTest extends Component {
         ans: data[`radio${i}`].value
       })
     }
-    submitAssesment(result);
-
+    submitAssesment({ans:result, time: 120});
   };
 
 

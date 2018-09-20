@@ -3,9 +3,9 @@ import { ofType } from 'redux-observable';
 import { catchError, mergeMap, map } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of'
 
-import { FETCH_SESSION__START, LOGOUT_START, SIGNIN_START, REGISTRATION_START } from '../actions/actionTypes';
+import { FETCH_SESSION__START, LOGOUT_START, SIGNIN_START } from '../actions/actionTypes';
 
-import {fetchSessionFulfilled, fetchSessionFailed, logoutFulfilled, logoutFailed, signinFulfilled, signinFailed, registerFulfilled, registerFailed } from '../actions/authAction';
+import {fetchSessionFulfilled, fetchSessionFailed, logoutFulfilled, logoutFailed, signinFulfilled, signinFailed } from '../actions/authAction';
 
 export function fetchSession(action$, state$){
 	return action$.pipe(
@@ -62,21 +62,6 @@ export function doSignin(action$, state$){
 				.pipe(
 					map(response => signinFulfilled(response)),
 					catchError(error => of(signinFailed(error.xhr.response)))
-				);
-		})
-	);
-}
-
-export function register(action$, state$){
-	return action$.pipe(
-		ofType(REGISTRATION_START),
-		mergeMap(action => {
-			let apiUrl = `/api/register`;
-			return ajax
-				.post(apiUrl, action.payload, { 'Content-Type': 'application/json' })
-				.pipe(
-					map(response => registerFulfilled(response)),
-					catchError(error => of(registerFailed(error.xhr.response)))
 				);
 		})
 	);

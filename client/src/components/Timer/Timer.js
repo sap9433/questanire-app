@@ -9,39 +9,11 @@ export default class Timer extends Component {
     this.state = {
       completed: false,
     }
-    this.fullTime = 20 * 60 * 1000;
+    this.fullTime = 5 * 60 * 1000;
     this.remainingSeconds = this.fullTime;
     this.currentStatus = false;
   }
   
-  componentDidMount() {
-    const url = `/api/timer/${this.props.testid}`;
-    
-    ajax.getJSON(url)
-    .subscribe(
-        data => {
-          console.log("data ", data);
-          const currentTime = new Date();
-          const startedAt = new Date();
-          const result = currentTime - startedAt;
-          console.log("result ", result);
-    
-          const fullTime = this.fullTime;
-          // this.remainingSeconds = result ? fullTime - result : fullTime;
-    
-          if (this.remainingSeconds <= 0)
-            this.setState({completed: true});
-        },
-        err => console.log(err)
-    );
-  }
-  
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.currentStatus) {
-      return false;
-    }
-    return true;
-  }
 
   renderer = ({ minutes, seconds, completed }) => {
 

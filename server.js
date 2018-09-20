@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 
 const authApi = require('./serverMiddleware/authApiHandler.js');
 const assesmentApi = require('./serverMiddleware/assesmentApiHandler.js');
-const takeTestManager = require('./serverMiddleware/takeTestManager.js');
 
 
 const __DEVELOPMENT__ = process.env.__DEVELOPMENT__;
@@ -23,11 +22,6 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-
-global.leaderboard = {
-	noOfQuestion: 5,
-	timeFrame: 30
-}; 
 
 // Since version 1.5.0, the cookie-parser middleware no longer needs to be used for this module to work
 app.use(bodyParser.json());
