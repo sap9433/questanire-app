@@ -1,5 +1,12 @@
 .result_wrapper {
-  margin-top: 20px; }
+  padding-top: 20px;
+  background: white; }
+
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left: 2%;
+  color: #eb7125; }
 
 .inline {
   display: inline-block; }
@@ -22,4 +29,37 @@
   float: right; }
 
 .name {
-  color: orange; }
+  color: #eb7125;
+  font-size: 3rem; }
+
+.countn {
+  font-size: 3rem;
+  color: #a0a0c5; }
+
+.certentLogo {
+  position: absolute;
+  right: 22px;
+  top: 10px; }
+
+.challenge {
+  width: 49%;
+  margin-left: 45%;
+  margin-top: 2%; }
+
+.alexa {
+  position: absolute;
+  top: 70%;
+  margin-left: 13%; }
+
+.car {
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 10%; }
+
+.time {
+  font-size: 10px; }
+
+.naspp {
+  position: absolute;
+  right: 0;
+  padding-top: 2%; }

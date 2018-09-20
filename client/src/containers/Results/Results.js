@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { Add } from '@material-ui/icons';
 import moment from 'moment';
+import Alexa from '../../images/alexa.jpg';
+import Car from '../../images/car.jpg';
+import Ellipse from '../../images/Ellipse.png';
+import Naspp from '../../images/conf.jpeg';
+
 import './Results.css';
 import _ from 'lodash';
 
@@ -19,7 +24,8 @@ export default class Results extends Component {
 	constructor(props) {
 		super(props); // eslint-disable-line
 		this.state = { // eslint-disable-line
-			leaderboard: []
+			leaderboard: [],
+			count: 5
 		};
 	}
 
@@ -57,24 +63,34 @@ export default class Results extends Component {
 	render() {
   	return (
 			<Fragment>
-				<Grid container spacing={40} className='result_wrapper'>
-					<Grid 
-						className="challenge"
-						item 
-						xs={12}
+				<div className='result_wrapper'>
+					<div className="header"> The Certent Equity Knowledge Challenge <div className="lboard"> Leadrerboard </div> </div>
+					<div className='certentLogo'>
+						 <img src={Ellipse} alt="logo"/>
+					</div>
+					<div className='car'>
+						 <img src={Car} alt="car"/>
+					</div>
+					<div className='alexa'>
+						 <img src={Alexa} alt="alexa"/>
+					</div>
+					<div className="challenge"
 						>
-						{this.state.leaderboard.map((user, i) =>{
+						{this.state.leaderboard.slice(0,this.state.count).map((user, i) =>{
 							return(
 								<div className='leader_row'>
+									<span className='countn'> {i+1} </span>
 									<span className='name'>{user.data[0]}</span>
-									<span className='email'>{ user.data[1]}</span>
-									<span className='time'>{ moment(new Date(user.data[2])).format('LLLL')}</span>
-									<span className='marks'>{ user.data[3]}</span>
+									<span className='time'>{ moment(new Date(user.data[2])).format('LLL')}</span>
+									<span className='marks'>{ (user.data[3] / 10).toFixed(2)} %</span>
 								</div>
 							)
 						})}
-					</Grid>
-				</Grid>
+					</div>
+					<div className='naspp'>
+						 <img src={Naspp} alt="naspp"/>
+					</div>
+				</div>
 			</Fragment>
 		);
 	}

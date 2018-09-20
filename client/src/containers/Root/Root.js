@@ -89,7 +89,7 @@ class Root extends Component {
 
   render() {
     const { user, location: { pathname } } = this.props;
-    const pageurls = ['/taketest/.*', '^/$'];
+    const pageurls = ['/taketest/.*', '^/$', '^/results'];
     const regex = new RegExp(pageurls.join("|"), "i");
     const hideHeader = regex.test(pathname);
     return (
@@ -111,7 +111,7 @@ class Root extends Component {
                 />)
                }
               } />            
-              <Route path="/results/:resultId" render={(props) => <Results user={user} {...props}/>}/>
+              <Route path="/results" render={(props) => <Results user={user} {...props}/>}/>
               <Route path="/enter/:testid" render={(props) => <CEnter user={user} {...props}/>}/>
               <Route path="/onboard/:testid" render={(props) => <COnboard user={user} {...props}/>}/>
               <Route path="/taketest/:testid" render={(props) => <TakeTest user={user} {...props}/>}/>
