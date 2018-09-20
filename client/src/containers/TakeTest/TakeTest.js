@@ -9,9 +9,6 @@ import { bindActionCreators } from "redux";
 import StartTest from "../../components/Modals/StartTest";
 import Timer from "../../components/Timer/Timer";
 import "./TakeTest.css";
-import "./accordion.css";
-
-import { testdata } from './data';
 
 import {
   Grid,
@@ -107,10 +104,10 @@ export class TakeTest extends Component {
       <Grid item xs={12}>
         <div className="headerContainer">
           <Grid container>
-            <Grid item md={3} xs={3}>
+            <Grid item md={5} xs={5}>
               <div className="logo__img" />
             </Grid>
-            <Grid item md={7} xs={7}>
+            <Grid item md={5} xs={5}>
               <Timer 
                 onFinish={this.handleFinishTest} 
                 onRender={this.handleCountTimer}
@@ -131,7 +128,7 @@ export class TakeTest extends Component {
           </Grid>
         </div>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} className="pagecontain">
         <form ref={form => this.ansform = form}>
         {
           this.state.questions.map((question, ind) => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown-now';
-import { ajax } from 'rxjs/observable/dom/ajax';
 import './Timer.css';
 
 export default class Timer extends Component {
