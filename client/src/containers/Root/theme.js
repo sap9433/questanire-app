@@ -1,12 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber';
-import yellow from '@material-ui/core/colors/yellow';
-import green from '@material-ui/core/colors/green';
+import orange from '@material-ui/core/colors/orange';
 
 export default createMuiTheme({
   palette: {
-    primary: yellow,
-    secondary: green, // Indigo is probably a good match with pink
-    third: green
+    primary: orange,
+    secondary: amber, // Indigo is probably a good match with pink
   }
 });

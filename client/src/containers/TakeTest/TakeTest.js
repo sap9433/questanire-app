@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { ajax } from 'rxjs/observable/dom/ajax';
-import { loadAssesment, submitAssesment } from "../../actions/assesmentAction";
+import { submitAssesment } from "../../actions/assesmentAction";
+import { doLogout } from '../../actions/authAction';
 import { bindActionCreators } from "redux";
 import StartTest from "../../components/Modals/StartTest";
 import Timer from "../../components/Timer/Timer";
@@ -52,10 +53,26 @@ export class TakeTest extends Component {
 
   handleCancelTest = () => {
     const {
-      match: { params: { testid } }
+      match: { params: { testid } },
+      history: { push }
     } = this.props;
     this.setState({ showStartModal: false });
     this.props.history.push(`/enter/${testid}`);
+  }
+
+  componentWillReceiveProps(nextProps){
+    const {
+      match: { params: { testid } },
+      history: { push }
+    } = this.props;
+    
+    if(nextProps.answerSubmission!==this.props.answerSubmission){
+      if(!nextProps.answerSubmission.error){
+        doLogout();
+        push(`/enter/${testid}`);
+      }
+    }
+
   }
 
   handleTestsubmit = event => {
@@ -73,9 +90,8 @@ export class TakeTest extends Component {
         ans: data[`radio${i}`].value
       })
     }
-    debugger
     submitAssesment(result);
-    push(`/enter/${testid}`);
+
   };
 
 
@@ -144,24 +160,22 @@ export class TakeTest extends Component {
 }
 
 TakeTest.propTypes = {
-  testDetails: PropTypes.object,
+  doLogout: PropTypes.func,
   answerSubmission: PropTypes.object,
-  loadAssesment: PropTypes.func,
   submitAssesment: PropTypes.func
 };
 
 const mapStateToProps = state => {
   return {
-    testDetails: state.assesments.testDetails,
     answerSubmission: state.assesments.answerSubmission
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    {
+    { 
+      doLogout,
       submitAssesment,
-      loadAssesment
     },
     dispatch
   );

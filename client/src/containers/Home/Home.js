@@ -154,7 +154,7 @@ class Home extends Component {
         </Grid>
         <Hidden only="xs">
           <Grid item xs={6}>
-            <img src={Ellipse} alt="nugget" />
+            <img src={Ellipse} alt="nugget" style={{width: '50%', paddingTop: '25%'}}/>
           </Grid>
         </Hidden>
       </Grid>

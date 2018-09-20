@@ -27,9 +27,9 @@ exports.answerSubmitted = function (req, res) {
   	`${req.session.user.name} | ${req.session.user.user_email} | ${new Date()} |  ${marks} \n`, 
   	function(err) {
     if(err) {
-        return console.log(err);
+        return res.json({error: true});
     }
-    return res.json({msg: `${req.session.user.name} Your response is successfully saved`});
+    return res.json({msg: true});
   }); 
 }
 
