@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { Add } from '@material-ui/icons';
 import moment from 'moment';
-import Alexa from '../../images/alexa.jpg';
-import Car from '../../images/car.jpg';
+import Alexa from '../../images/alexa.png';
+import Car from '../../images/car.png';
 import Bottom from '../../images/bottom.png';
 import Naspp from '../../images/conf.jpeg';
 
@@ -67,6 +67,9 @@ export default class Results extends Component {
 					<div className="header"> Certent Challenge Quiz <div className="lboard"> Equity Knowledge LEADERBOARD </div> </div>
 					<div>
 						 <img className='certentLogo' src={Bottom} alt="logo"/>
+					</div>
+					<div className='prizes'>
+						 Prizes
 					</div>
 					<div className='car'>
 						 <img src={Car} alt="car"/>
