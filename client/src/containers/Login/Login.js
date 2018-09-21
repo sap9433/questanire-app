@@ -38,7 +38,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    const { match: { params: { islogin } } } = this.props;
   }
 
   handleChangeInfo = name => event  => {

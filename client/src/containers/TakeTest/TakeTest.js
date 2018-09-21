@@ -61,7 +61,8 @@ export class TakeTest extends Component {
   componentWillReceiveProps(nextProps){
     const {
       match: { params: { testid } },
-      history: { push }
+      history: { push },
+      doLogout
     } = this.props;
     
     if(nextProps.answerSubmission!==this.props.answerSubmission){

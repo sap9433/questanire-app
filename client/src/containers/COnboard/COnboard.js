@@ -61,7 +61,6 @@ class COnboard extends Component {
         </Grid>
       </Grid>
       <img className='bottomImg' src={Bottom} alt="nugget" />
-
     </div>
     );
   }

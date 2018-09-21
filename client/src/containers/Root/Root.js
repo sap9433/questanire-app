@@ -92,30 +92,8 @@ class Root extends Component {
           {!hideHeader && <Header user={user} />}
           <div className={!hideHeader ? "root__container" : ''}>
             <Switch>
-              <Route exact path="/" render={(props) => {
-                const {
-                    match: {
-                      params: { islogin }
-                    }
-                  } = props;
-                return(<Login 
-                key={`${islogin}`}
-                user={user} {...props}
-                />)
-               }
-              } /> 
-              <Route path="/register/:islogin?" render={(props) => {
-                const {
-                    match: {
-                      params: { islogin }
-                    }
-                  } = props;
-                return(<Login 
-                key={`${islogin}`}
-                user={user} {...props}
-                />)
-               }
-              } />            
+              <Route exact path="/" render={(props) => <Login user={user} {...props} />}/>
+              <Route exact path="/register/login" render={(props) => <Login user={user} {...props} />}/>     
               <Route path="/results" render={(props) => <Results user={user} {...props}/>}/>
               <Route path="/enter/:testid" render={(props) => <CEnter user={user} {...props}/>}/>
               <Route path="/onboard/:testid" render={(props) => <COnboard user={user} {...props}/>}/>
