@@ -19,8 +19,9 @@ getScore = function(req) {
 }
 
 exports.answerSubmitted = function (req, res) {
-  if( !req.session.user ){
-    return res.json({error: true, message: 'You dont have permission to take the test'});
+  const user = req.session.user;
+  if( !user || user.account_type !== 2 ){
+    return res.json({error: true, message: 'You dont have permission to taketest'});
   }
   const marks = getScore(req);
 
@@ -35,6 +36,10 @@ exports.answerSubmitted = function (req, res) {
 }
 
 exports.getLeaderBoard = function (req, res) {
+  const user = req.session.user;
+  if( !user || user.account_type !== 1 ){
+    return res.json({error: true, message: 'You dont have permission to fetch leader board'});
+  }
   fs.readFile('./leaderboar.txt', 'utf8', function(err, contents) {
     let allUser = contents.split('\n');
     allUser.splice(-1,1);
@@ -43,11 +48,19 @@ exports.getLeaderBoard = function (req, res) {
 }
 
 exports.getDownload = function (req, res) {
+  const user = req.session.user;
+  if( !user || user.account_type !== 1 ){
+    return res.json({error: true, message: 'You dont have permission to download'});
+  }
   const file = './leaderboar.txt';
   return res.download(file); // Set disposition and send it.
 }
 
 exports.deleteboard = function (req, res) {
+  const user = req.session.user;
+  if( !user || user.account_type !== 1 ){
+    return res.json({error: true, message: 'You dont have permission to delete'});
+  }
   const newName = new Date().toISOString();
   fs.rename('./leaderboar.txt', `./leaderboar_${newName}.txt`, function(err) {
     if ( err ){

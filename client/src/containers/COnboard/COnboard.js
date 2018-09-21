@@ -20,9 +20,13 @@ class COnboard extends Component {
     };
   }
 
-  render() {
-    const { user, match: { params: { testid } } } = this.props;
+  startTest = () => {
+    const { history: {push}, match: { params: { testid } } } = this.props;
+    push('/taketest/${testid}');
+  }
 
+  render() {
+    const { user } = this.props;
     return (
       <div className='onBoardWrapper'>
         <Grid 
@@ -35,28 +39,25 @@ class COnboard extends Component {
         <Grid item sm={6}>
           <div className="form">
             <h1>
-              Hi there!
+              Hi {user && user.name}!
             </h1>
             <p>
               Certent Challenge Quiz
               <br/><br/>
-              <strong>IMPORTANT INSTRUCTIONS:</strong>
+              <strong>IMPORTANT INSTRUCTIONS: </strong>
                 You have a few minutes to answer the quiz. Be as correct and as quick as you can. Good Luck !
               <br/><br/>
                Please do not forget to click on the submit button as soon as you complete the quiz.
               <br/><br/>
             </p>
-
-            <a href={`/taketest/${testid}`}>
-              <Button 
-                className="enter_but"
-                variant="contained" 
-                color="primary"
-              >
-              <strong>START TEST</strong>
-              </Button>
-            </a>
-
+            <Button 
+              className="enter_but"
+              variant="contained" 
+              color="primary"
+              onClick={this.startTest}
+            >
+            <strong>START TEST</strong>
+            </Button>
           </div>
         </Grid>
       </Grid>

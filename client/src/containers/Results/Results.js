@@ -83,7 +83,7 @@ export default class Results extends Component {
 							return(
 								<div className='leader_row'>
 									<span className='countn'> {i+1}. </span>
-									<span className='name'>{user.data[0]}</span>
+									<span className='name'>{_.truncate(_.startCase(user.data[0]), {'length': 20})}</span>
 									<span className='elapsed'>{`Took ${user.data[4]} sec at ${moment(user.data[2]).format('hh:mm A')}` } </span>
 									<span className='marks'>{ user.data[3] * 100}%</span>
 								</div>
