@@ -1,11 +1,3 @@
 Salah Salah Salah Ahmed |some@works.com|Fri Sep 21 2018 11:09:59 GMT-0500 (CDT)|0.13|20|113.13
-Md Suleman |some@works.com|Fri Sep 21 2018 11:09:59 GMT-0500 (CDT)|0.23|20|230.21
-John Doe|some@works.com|Fri Sep 21 2018 11:09:59 GMT-0500 (CDT)|0.63|120|630.33
-Alex JonesAlex JonesAlex JonesAlex JonesAlex Jones|some@works.com|Fri Sep 21 2018 11:09:59 GMT-0500 (CDT)|0.73|10|733.43
-Betty Mercedes|some@works.com|Fri Sep 21 2018 11:09:59 GMT-0500 (CDT)|0.61|120|613.33
-Rishi Neb|rishi@hotmail.com|Fri Sep 21 2018 15:09:55 GMT-0500 (CDT)|0.67|120|546.67
-dasdas dsadas|dasdas@asd.aas|Fri Sep 21 2018 15:18:52 GMT-0500 (CDT)|0.00|120|-120.00
-adsda asdas|zxz@asas.com|Fri Sep 21 2018 15:20:05 GMT-0500 (CDT)|0.50|120|380.00
-adsdas dasdas|dasda@sds.dsd|Fri Sep 21 2018 15:21:20 GMT-0500 (CDT)|0.00|120|-120.00
-Rukmini Khan|s.aptarshichatterjee1@gmail.com|Fri Sep 21 2018 17:54:47 GMT-0500 (CDT)|0.20|165|35.00
 asdas asdas|salame@salame.com|Fri Sep 21 2018 17:56:44 GMT-0500 (CDT)|0.00|37|-37.00
+Vimula Saini|vimsaini@gmail.com|Fri Sep 21 2018 18:42:14 GMT-0500 (CDT)|0.25|71|179.00

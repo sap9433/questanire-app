@@ -3,11 +3,12 @@ const fs = require('fs');
 const _ = require('lodash');
 
 exports.getATest = function (req, res) {
+  const testId = req.params.testid;
   const user = req.session.user;
   if( !user || user.account_type !== 2 ){
     return res.json([{ text: 'You need to log in as test taker to see this page'}]);
   }
-  return res.json(questions);
+  return res.json(_.take(_.shuffle(questions), testId));
 }
 
 getScore = function(req) {
