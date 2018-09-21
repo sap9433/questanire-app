@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import Countdown from 'react-countdown-now';
 import './Timer.css';
 
+
 export default class Timer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       completed: false,
     }
-    this.fullTime = 5 * 60 * 1000;
+    const { time } = this.props;
+    this.fullTime = time * 60 * 1000;
     this.remainingSeconds = this.fullTime;
     this.currentStatus = false;
   }
@@ -36,9 +38,6 @@ export default class Timer extends Component {
       <div className='timer'>
         <p>
           <small>Time remaining</small>
-          {
-            !timerStarted && <span>00:00</span>
-          }
           {
             timerStarted && 
             <Countdown

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { clientSoftLogin } from '../../actions/authAction';
 import { bindActionCreators } from 'redux';
-import { email as validEmail } from '../../utils/validation';
 import bottom from '../../images/bottom.png';
 import './CEnter.css';
 import {
@@ -13,7 +12,7 @@ import {
 } from '@material-ui/core';
 
 const invalidMsg = [
-  'Please type your name!',
+  'Please type valid name!',
   'Please type valid email!'
 ];
 
@@ -33,6 +32,11 @@ class CEnter extends Component {
     this.setState({ [name]: event.target.value, valid: 0 });
   }
 
+  validateEmail =  (email) => {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   handleSignin = (evt) => {
     evt.preventDefault();
     const { fname, lname, email } = this.state;
@@ -41,7 +45,7 @@ class CEnter extends Component {
       this.setState({ valid: 1 });
       return;
     }
-    if (validEmail(email) !== undefined || email.length < 5) {
+    if (!this.validateEmail(email)) {
       this.setState({ valid: 2 });
       return;
     }
@@ -52,9 +56,9 @@ class CEnter extends Component {
   }
 
   componentWillReceiveProps(newProps){
-    const { match: { params: { testid } }, history: { push }, user } = this.props;
+    const { match: { params: { testid, time } }, history: { push }, user } = this.props;
     if(newProps.user && newProps.user !== user){
-      push(`/onboard/${testid}`);
+      push(`/onboard/${testid}/${time}`);
     }
   }
 

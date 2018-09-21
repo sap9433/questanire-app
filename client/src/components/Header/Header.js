@@ -25,11 +25,11 @@ class Header extends Component {
 						<div className="nav__icons">
 							{user &&
 								<div className="profile__but" eventkey={6}>
-									<Button href="/register/login"><strong>Hi, {user.name}!</strong></Button>
+									<Button href="/enter/5"><strong>Hi, {user.name}!</strong></Button>
 								</div>
 							}
 							{!user &&
-								<Link to='#'>
+								<Link to='/enter/5/3'>
 									<Button 
 										className="register_but"
 										eventkey={6}

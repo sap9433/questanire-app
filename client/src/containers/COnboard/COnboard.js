@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Bottom from '../../images/bottom.png';
 import './COnboard.css';
+import localStorage from 'localStorage';
 
 import {
   Button,
@@ -21,8 +22,13 @@ class COnboard extends Component {
   }
 
   startTest = () => {
-    const { history: {push}, match: { params: { testid } } } = this.props;
-    push('/taketest/${testid}');
+    const { history: {push}, match: { params: { testid, time } }, user } = this.props;
+    if(!user || user.account_type === 1){
+      alert(' You are not authorised to take this test. Log out and log in again');
+      return false;
+    }
+    localStorage.setItem(user.user_email, Date());
+    push( `/taketest/${testid}/${time}`);
   }
 
   render() {

@@ -121,7 +121,7 @@ class Login extends Component {
             </Grid>
           </Grid>
         }
-        {user &&
+        {user && user.account_type === 1 &&
         <div>
           <p>You are currently logged in as {user.name}.</p>
           <div className="card">
@@ -131,7 +131,7 @@ class Login extends Component {
               <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a>
               <div className='sidebytop'>
                   <div className='sidebyleft'> <a href='/results'>Leader Board </a> </div>
-                  <div className='sidebyright'> <a href='/enter/5'> Take Test </a> </div>
+                  <div className='sidebyright'> <a href='/enter/5/3'> Take Test </a> </div>
               </div>
               <div className='sidebytop'>
                   <div className='sidebyleft'> <a href='/api/download'> Download </a> </div>
@@ -140,6 +140,9 @@ class Login extends Component {
             </div>
           </div>
         </div>
+        }
+        {user && user.account_type === 2 &&
+          <div className='error'> You are not authorised to see this page <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a></div>
         }
       </div>
     );

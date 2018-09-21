@@ -10,6 +10,8 @@ import StartTest from "../../components/Modals/StartTest";
 import Timer from "../../components/Timer/Timer";
 import "./TakeTest.css";
 import _ from 'lodash';
+import localStorage from 'localStorage';
+import moment from 'moment';
 
 import {
   Grid,
@@ -27,11 +29,14 @@ export class TakeTest extends Component {
 
   componentDidMount = () => {
     const {
-      match: { params: { testid } }
+      match: { params: { testid, time } }
     } = this.props;
 
+    if(parseInt(testid) && parseInt(time) && parseInt(testid) > 15 && parseInt(time) > 10){
+      alert(' Testid and Time must be Intger and within 25 and 8 respectively');
+      return false;
+    }
     this.setState({ testStarted: true })
-
     const url = `/api/gettest/${testid}`;
     
     ajax.getJSON(url)
@@ -51,24 +56,26 @@ export class TakeTest extends Component {
 
   handleCancelTest = () => {
     const {
-      match: { params: { testid } },
+      match: { params: { testid, time } },
       history: { push }
     } = this.props;
     this.setState({ showStartModal: false });
-    this.props.history.push(`/enter/${testid}`);
+    this.props.history.push(`/enter/${testid}/${time}`);
   }
 
   componentWillReceiveProps(nextProps){
     const {
-      match: { params: { testid } },
+      match: { params: { testid, time } },
       history: { push },
-      doLogout
+      doLogout,
+      user
     } = this.props;
     
     if(nextProps.answerSubmission!==this.props.answerSubmission){
       if(!nextProps.answerSubmission.error){
+        localStorage.removeItem(user.user_email);
         doLogout();
-        push(`/enter/${testid}`);
+        push(`/enter/${testid}/${time}`);
       }
     }
 
@@ -77,19 +84,31 @@ export class TakeTest extends Component {
   handleTestsubmit = event => {
     event.preventDefault();
     const {
-      match: { params: { testid } },
+      match: {params: {testid, time}},
       history: { push },
-      submitAssesment
+      submitAssesment,
+      user
     } = this.props;
+
+    if(!user || user.account_type !== 2){
+      alert(' You are not authorised to submit this test. Log out and log in again');
+      return false;
+    }
+
+    if(!parseInt(testid) || !parseInt(time)){
+      alert(' Testid and Time must be intger');
+      return false;
+    }
+    const timeElapsed = moment().diff(localStorage.getItem(user.user_email), 'seconds');
     const data = this.ansform;
     let result = [];
     for(let i=0; i < testid; i++ ){
       result.push({
-        text: data[`text${i}`].value,
-        ans: data[`radio${i}`].value
+        text: data[`text${i}`] ? data[`text${i}`].value: 'unknown',
+        ans: data[`radio${i}`] ? data[`radio${i}`].value: 'unknown'
       })
     }
-    submitAssesment({ans:result, time: 120});
+    submitAssesment({ans:result, time: timeElapsed});
   };
 
 
@@ -100,7 +119,9 @@ export class TakeTest extends Component {
   }
 
   render() {
-
+    const {
+      match: { params: { time } },
+    } = this.props;
     return ( 
     <Grid container>
       <Grid item xs={12}>
@@ -115,6 +136,7 @@ export class TakeTest extends Component {
                 onRender={this.handleCountTimer}
                 timerStarted={this.state.testStarted}
                 key={this.state.testStarted}
+                time={time}
               />
             </Grid>
             <Grid item md={2} xs={2}>
@@ -160,11 +182,13 @@ export class TakeTest extends Component {
 TakeTest.propTypes = {
   doLogout: PropTypes.func,
   answerSubmission: PropTypes.object,
-  submitAssesment: PropTypes.func
+  submitAssesment: PropTypes.func,
+  user: PropTypes.any
 };
 
 const mapStateToProps = state => {
   return {
+    user: state.auth.user,
     answerSubmission: state.assesments.answerSubmission
   };
 };

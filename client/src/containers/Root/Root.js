@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './theme';
-import { setItem } from '../../helpers/localStorage';
 import {
   fetchSession
 } from '../../actions/authAction';
@@ -45,10 +44,6 @@ const TakeTest = Loadable({
   loader: () => import('../TakeTest/TakeTest'),
   loading: Loading,
 });
-const CSignIn = Loadable({
-  loader: () => import('../CSignIn/CSignIn'),
-  loading: Loading,
-});
 
 class Root extends Component {
 
@@ -62,7 +57,8 @@ class Root extends Component {
 
     const privateRoutes = [
       '/results',
-      '/createtest'
+      '/createtest',
+      '/register/login'
     ];
     if (!this.props.user && newProps.user) {
       // login
@@ -95,10 +91,9 @@ class Root extends Component {
               <Route exact path="/" render={(props) => <Login user={user} {...props} />}/>
               <Route exact path="/register/login" render={(props) => <Login user={user} {...props} />}/>     
               <Route path="/results" render={(props) => <Results user={user} {...props}/>}/>
-              <Route path="/enter/:testid" render={(props) => <CEnter user={user} {...props}/>}/>
-              <Route path="/onboard/:testid" render={(props) => <COnboard user={user} {...props}/>}/>
-              <Route path="/taketest/:testid" render={(props) => <TakeTest user={user} {...props}/>}/>
-              <Route path="/candidatelogin" component={CSignIn}/>
+              <Route path="/enter/:testid/:time" render={(props) => <CEnter user={user} {...props}/>}/>
+              <Route path="/onboard/:testid/:time" render={(props) => <COnboard user={user} {...props}/>}/>
+              <Route path="/taketest/:testid/:time" render={(props) => <TakeTest user={user} {...props}/>}/>
               <Route component={NotFound} />
            </Switch>
           </div>
