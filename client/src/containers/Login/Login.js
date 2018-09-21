@@ -132,6 +132,14 @@ class Login extends Component {
               <h5 className="card-title">{user.name}</h5>
               <p className="card-text"> Your account type is <strong>{user.account_type === 1 ? ' Admin ' : 'Quiz Taker'}</strong> . Thank you for registering with us</p>
               <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a>
+              <div className='sidebytop'>
+                  <div className='sidebyleft'> <a href='/results'>Leader Board </a> </div>
+                  <div className='sidebyright'> <a href='/enter/5'> Take Test </a> </div>
+              </div>
+              <div className='sidebytop'>
+                  <div className='sidebyleft'> <a href='/api/download'> Download </a> </div>
+                  <div className='sidebyright'> <a href='/api/delete'> Delete Leader board </a> </div>
+              </div>
             </div>
           </div>
         </div>

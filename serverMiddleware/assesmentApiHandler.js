@@ -41,3 +41,9 @@ exports.getLeaderBoard = function (req, res) {
   });
 }
 
+
+exports.getDownload = function (req, res) {
+  const file = './leaderboar.txt';
+  return res.download(file); // Set disposition and send it.
+}
+
