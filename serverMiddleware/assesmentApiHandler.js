@@ -8,13 +8,14 @@ exports.getATest = function (req, res) {
 
 getScore = function(req) {
   const questionCount = req.body.ans.length;
+  const time = req.body.time;
   let marks = 0;
 
 	req.body.ans.map((ans, ind) => {
 	    const isMatch = _.find(questions, {text: ans.text, ans: [ans.ans]});
         marks += isMatch ? (1.0/questionCount) : 0;
 	})
-	return (marks * 1000 - req.body.time).toFixed(2);
+	return [marks.toFixed(2), time ,(marks * 1000 - req.body.time).toFixed(2)];
 }
 
 exports.answerSubmitted = function (req, res) {
@@ -24,7 +25,7 @@ exports.answerSubmitted = function (req, res) {
   const marks = getScore(req);
 
   fs.appendFile("./leaderboar.txt", 
-  	`${req.session.user.name} | ${req.session.user.user_email} | ${new Date()} |  ${marks} \n`, 
+  	`${req.session.user.name}|${req.session.user.user_email}|${new Date()}|${marks[0]}|${marks[1]}|${marks[2]}\n`, 
   	function(err) {
     if(err) {
         return res.json({error: true});
@@ -41,9 +42,21 @@ exports.getLeaderBoard = function (req, res) {
   });
 }
 
-
 exports.getDownload = function (req, res) {
   const file = './leaderboar.txt';
   return res.download(file); // Set disposition and send it.
 }
+
+exports.deleteboard = function (req, res) {
+  const newName = new Date().toISOString();
+  fs.rename('./leaderboar.txt', `./leaderboar_${newName}.txt`, function(err) {
+    if ( err ){
+      return res.json({msg: 'Cant refresh file'});
+    } else{
+       fs.closeSync(fs.openSync('./leaderboar.txt', 'w'));
+       return res.json({msg: 'File successfully deleted'});
+    }
+  });
+}
+
 

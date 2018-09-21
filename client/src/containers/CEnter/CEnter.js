@@ -63,6 +63,7 @@ class CEnter extends Component {
     const validationStyle = valid === 0 ? 'validationTrue' : 'validationFalse';
     return (
       <div className='signinWrapper'>
+        <img className='bottomImg' src={bottom} alt="nugget" />
         <Grid 
           container
           direction="column" 
@@ -124,8 +125,6 @@ class CEnter extends Component {
             </div>
           </Grid>
         </Grid>
-        
-        <img className='bottomImg' src={bottom} alt="nugget" />
       </div>
     );
   }

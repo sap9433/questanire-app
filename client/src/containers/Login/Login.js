@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { doLogout, doSignin } from '../../actions/authAction';
-import Ellipse from '../../images/Ellipse.png';
 import bottom from '../../images/bottom.png';
 import './Login.css';
 import {
@@ -77,9 +76,10 @@ class Login extends Component {
             alignItems="center"
             className="login_wrapper"
           >
+            <img className='bottomImg' src={bottom} alt="nugget" />
             <Grid item sm={6}>
               <div className="login_form">
-                <h1><strong>Employer Login</strong></h1>
+                <h1><strong>Admin Login</strong></h1>
                 <TextField
                   id="login_email"
                   label="Email"
@@ -120,8 +120,6 @@ class Login extends Component {
 
               </div>
             </Grid>
-             
-             <img className='bottomImg' src={bottom} alt="nugget" />
           </Grid>
         }
         {user &&

@@ -16,7 +16,6 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import bottom from '../../images/bottom.png';
-import clouds from '../../images/clouds.png';
 import { email as validEmail } from '../../utils/validation';
 import './CSignIn.css';
 
@@ -89,11 +88,8 @@ class CSignIn extends Component {
 
           </div>
         </Grid>
-      </Grid>
-      
-      <img className='cloudImage' src={clouds} alt="cloud" />
+      </Grid>      
       <img className='bottomImg' src={bottom} alt="nugget" />
-
       </div>
     );
   }

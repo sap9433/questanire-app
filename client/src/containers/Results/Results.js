@@ -5,7 +5,7 @@ import { Add } from '@material-ui/icons';
 import moment from 'moment';
 import Alexa from '../../images/alexa.jpg';
 import Car from '../../images/car.jpg';
-import Ellipse from '../../images/Ellipse.png';
+import Bottom from '../../images/bottom.png';
 import Naspp from '../../images/conf.jpeg';
 
 import './Results.css';
@@ -64,9 +64,9 @@ export default class Results extends Component {
   	return (
 			<Fragment>
 				<div className='result_wrapper'>
-					<div className="header"> The Certent Equity Knowledge Challenge <div className="lboard"> Leadrerboard </div> </div>
-					<div className='certentLogo'>
-						 <img src={Ellipse} alt="logo"/>
+					<div className="header"> Certent Challenge Quiz <div className="lboard"> Equity Knowledge LEADERBOARD </div> </div>
+					<div>
+						 <img className='certentLogo' src={Bottom} alt="logo"/>
 					</div>
 					<div className='car'>
 						 <img src={Car} alt="car"/>
@@ -79,16 +79,16 @@ export default class Results extends Component {
 						{this.state.leaderboard.slice(0,this.state.count).map((user, i) =>{
 							return(
 								<div className='leader_row'>
-									<span className='countn'> {i+1} </span>
+									<span className='countn'> {i+1}. </span>
 									<span className='name'>{user.data[0]}</span>
-									<span className='time'>{ moment(new Date(user.data[2])).format('LLL')}</span>
-									<span className='marks'>{ (user.data[3] / 10).toFixed(2)} %</span>
+									<span className='elapsed'>{`Took ${user.data[4]} sec at ${moment(user.data[2]).format('hh:mm A')}` } </span>
+									<span className='marks'>{ user.data[3] * 100}%</span>
 								</div>
 							)
 						})}
 					</div>
-					<div className='naspp'>
-						 <img src={Naspp} alt="naspp"/>
+					<div>
+						 <img className='naspp' src={Naspp} alt="naspp"/>
 					</div>
 				</div>
 			</Fragment>

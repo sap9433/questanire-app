@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import bottom from '../../images/bottom.png';
-import clouds from '../../images/clouds.png';
+import Bottom from '../../images/bottom.png';
 import './COnboard.css';
 
 import {
@@ -66,9 +65,7 @@ class COnboard extends Component {
           </div>
         </Grid>
       </Grid>
-      
-      <img className='cloudImage' src={clouds} alt="cloud" />
-      <img className='bottomImg' src={bottom} alt="nugget" />
+      <img className='bottomImg' src={Bottom} alt="nugget" />
 
     </div>
     );
