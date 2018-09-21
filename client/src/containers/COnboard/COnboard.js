@@ -11,7 +11,6 @@ import {
   Typography,
 } from '@material-ui/core';
 
-const company = 'McGill Case League';
 
 class COnboard extends Component {
   constructor(props) {
@@ -39,17 +38,13 @@ class COnboard extends Component {
               Hi there!
             </h1>
             <p>
-              {company} would like to see if you’re a good fit for the program. We’re going to give you a challenge and ask you to solve it in three steps.
-
+              Certent Challenge Quiz
               <br/><br/>
               <strong>IMPORTANT INSTRUCTIONS:</strong>
-              There are four containers which you will be asked to “identify the problem”, “collect important information” (you can drag and drop text), “engender ideas (brainstrom up to 3 alternatives)”, and “recommend a solution”. Use bullet points or full sentences, it’ s up to you! We’re measuring your decision-making process and problem solving skills.
-
+                You have a few minutes to answer the quiz. Be as correct and as quick as you can. Good Luck !
               <br/><br/>
-              A confirmation message will pop up just after this screen before you get started. You 'll have 20 minutes to complete the challenge.
+               Please do not forget to click on the submit button as soon as you complete the quiz.
               <br/><br/>
-
-              Goodluck!
             </p>
 
             <a href={`/taketest/${testid}`}>

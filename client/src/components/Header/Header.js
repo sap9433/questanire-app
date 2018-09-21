@@ -18,7 +18,6 @@ class Header extends Component {
 				<AppBar className="AppBar" color="default" position="static">
 					<Toolbar eventkey={0} isopen={user} className='navbarItem'>
 						<IconButton 
-							href="/" 
 							className="brand" 
 							color="inherit" 
 							aria-label="Logo"
@@ -26,11 +25,11 @@ class Header extends Component {
 						<div className="nav__icons">
 							{user &&
 								<div className="profile__but" eventkey={6}>
-									<Button href="/register"><strong>Hi, {user.name}!</strong></Button>
+									<Button href="/register/login"><strong>Hi, {user.name}!</strong></Button>
 								</div>
 							}
 							{!user &&
-								<Link to="/">
+								<Link to='#'>
 									<Button 
 										className="register_but"
 										eventkey={6}

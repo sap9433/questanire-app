@@ -8,9 +8,9 @@ import {
   SIGNIN_START,
   SIGNIN_SUCCESS,
   SIGNIN_FAILED,
-  REGISTRATION_START,
-  REGISTRATION_SUCCESS,
-  REGISTRATION_FAILED
+  SOFT_SIGNIN_START,
+  SOFT_SIGNIN_SUCCESS,
+  SOFT_SIGNIN_FAILED
 } from './actionTypes'
 
 export function fetchSession(payload) {
@@ -67,13 +67,6 @@ export function doSignin(payload) {
   };
 }
 
-export function clientSoftLogin(payload) {
-  return {
-    type: SIGNIN_START,
-    payload
-  };
-}
-
 // on successful
 export function signinFulfilled(payload) {
   return {
@@ -90,3 +83,25 @@ export function signinFailed(payload) {
   };
 }
 
+export function clientSoftLogin(payload) {
+  return {
+    type: SOFT_SIGNIN_START,
+    payload
+  };
+}
+
+// on successful
+export function softLoginFulfilled(payload) {
+  return {
+    type: SOFT_SIGNIN_SUCCESS,
+    payload
+  };
+}
+
+// on fail
+export function softLoginFailed(payload) {
+  return {
+    type: SOFT_SIGNIN_FAILED,
+    payload
+  };
+}

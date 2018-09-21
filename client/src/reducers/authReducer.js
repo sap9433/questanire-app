@@ -8,9 +8,9 @@ import {
   SIGNIN_START,
   SIGNIN_SUCCESS,
   SIGNIN_FAILED,
-  REGISTRATION_START,
-  REGISTRATION_SUCCESS,
-  REGISTRATION_FAILED
+  SOFT_SIGNIN_START,
+  SOFT_SIGNIN_SUCCESS,
+  SOFT_SIGNIN_FAILED
 } from '../actions/actionTypes';
 
 let initialState = {
@@ -71,6 +71,25 @@ export function authDetails(state = initialState, action) {
       });
 
     case SIGNIN_FAILED:
+      return Object.assign({}, state, {
+        isLoading: false,
+        errors: action.payload,
+        user: null
+      });
+
+    case SOFT_SIGNIN_START:
+      return Object.assign({}, state, {
+        isLoading: true
+      });
+
+    case SOFT_SIGNIN_SUCCESS:
+      return Object.assign({}, state, {
+        isLoading: false,
+        user: (action.payload.response || {}).error ? null : action.payload.response,
+        status: action.payload.response
+      });
+
+    case SOFT_SIGNIN_FAILED:
       return Object.assign({}, state, {
         isLoading: false,
         errors: action.payload,

@@ -3,7 +3,7 @@
 }
 
 .header {
-    font-size: 1.6rem;
+    font-size: 2.3rem;
     font-weight: 700;
     padding-left: 2%;
     color: #eb7125;
@@ -38,11 +38,11 @@
 
 .name {
     color: #eb7125;
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 .countn {
-    font-size: 3rem;
+    font-size: 2.3rem;
     color: #eb7125;
 }
 
@@ -56,7 +56,7 @@
 
 .challenge {
     width: 60%;
-    top: 200px;
+    top: 220px;
     right: 46px;
     position: absolute;
 }
@@ -88,6 +88,7 @@
     width: 9rem;
     right: 47px;
     bottom: 28px;
+    display: none;
 }
 
 .prizes{

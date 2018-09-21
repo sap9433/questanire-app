@@ -9,6 +9,7 @@ import { bindActionCreators } from "redux";
 import StartTest from "../../components/Modals/StartTest";
 import Timer from "../../components/Timer/Timer";
 import "./TakeTest.css";
+import _ from 'lodash';
 
 import {
   Grid,
@@ -131,12 +132,12 @@ export class TakeTest extends Component {
       <Grid item xs={12} className="pagecontain">
         <form ref={form => this.ansform = form}>
         {
-          this.state.questions.map((question, ind) => {
+          _.shuffle(this.state.questions).map((question, ind) => {
             return(
               <div key={ind}>
                 <input className="question" name={`text${ind}`} type="text" value={question.text} disabled /> 
                 {
-                  question.options.map((option, indx) => {
+                  _.shuffle(question.options).map((option, indx) => {
                     return(
                       <div className="radio" key={indx}>
                         <input type="radio" value={option} name={`radio${ind}`}/> {option}

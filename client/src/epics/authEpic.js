@@ -3,9 +3,9 @@ import { ofType } from 'redux-observable';
 import { catchError, mergeMap, map } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of'
 
-import { FETCH_SESSION__START, LOGOUT_START, SIGNIN_START } from '../actions/actionTypes';
+import { FETCH_SESSION__START, LOGOUT_START, SIGNIN_START, SOFT_SIGNIN_START } from '../actions/actionTypes';
 
-import {fetchSessionFulfilled, fetchSessionFailed, logoutFulfilled, logoutFailed, signinFulfilled, signinFailed } from '../actions/authAction';
+import {fetchSessionFulfilled, fetchSessionFailed, logoutFulfilled, logoutFailed, signinFulfilled, signinFailed, softLoginFulfilled, softLoginFailed } from '../actions/authAction';
 
 export function fetchSession(action$, state$){
 	return action$.pipe(
@@ -39,14 +39,14 @@ export function doLogout(action$, state$){
 
 export function clientSoftLogin(action$, state$){
 	return action$.pipe(
-		ofType(SIGNIN_START),
+		ofType(SOFT_SIGNIN_START),
 		mergeMap(action => {
 			let apiUrl = `/api/candidatelogin`;
 			return ajax
 				.post(apiUrl, action.payload, { 'Content-Type': 'application/json' })
 				.pipe(
-					map(response => signinFulfilled(response)),
-					catchError(error => of(signinFailed(error.xhr.response)))
+					map(response => softLoginFulfilled(response)),
+					catchError(error => of(softLoginFailed(error.xhr.response)))
 				);
 		})
 	);

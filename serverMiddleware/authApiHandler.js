@@ -6,7 +6,7 @@ exports.signinRoute = function(req, res) {
         message: 'Login failed! That email/password does not match our records.'
     };
 
-    if(req.body.password === 'certent' && req.body.user_email === 'certent@certent.com'){
+    if(req.body.password === 'certent' && req.body.email === 'certent@certent.com'){
       const user = {
             name: 'Certent',
             user_id: 1,
