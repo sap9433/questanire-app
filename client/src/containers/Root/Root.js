@@ -26,11 +26,6 @@ const Login = Loadable({
   loading: Loading,
 });
 
-const Home = Loadable({
-  loader: () => import('../Home/Home'),
-  loading: Loading,
-});
-
 const Results = Loadable({
   loader: () => import('../Results/Results'),
   loading: Loading,
@@ -66,7 +61,7 @@ class Root extends Component {
     const enablePrivateRoute = true;
 
     const privateRoutes = [
-      '/dashboard',
+      '/results',
       '/createtest'
     ];
     if (!this.props.user && newProps.user) {
@@ -76,9 +71,8 @@ class Root extends Component {
         history.push(gotoUrl);
       } else {
         const redirectIfLoggedIn = ['/'];
-        setItem('firstlogin', 'true');
         if(redirectIfLoggedIn.indexOf(pathname) > -1){
-          history.push('/dashboard');
+          history.push('/register/login');
         }
       }
     } 
@@ -98,7 +92,18 @@ class Root extends Component {
           {!hideHeader && <Header user={user} />}
           <div className={!hideHeader ? "root__container" : ''}>
             <Switch>
-              <Route exact path="/"  component={Home} /> 
+              <Route exact path="/" render={(props) => {
+                const {
+                    match: {
+                      params: { islogin }
+                    }
+                  } = props;
+                return(<Login 
+                key={`${islogin}`}
+                user={user} {...props}
+                />)
+               }
+              } /> 
               <Route path="/register/:islogin?" render={(props) => {
                 const {
                     match: {
