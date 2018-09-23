@@ -130,7 +130,7 @@ class Login extends Component {
               <p className="card-text"> Your account type is <strong>{user.account_type === 1 ? ' Admin ' : 'Quiz Taker'}</strong> . Thank you for registering with us</p>
               <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a>
               <div className='sidebytop'>
-                  <div className='sidebyleft'> <a href='/results'>Leader Board </a> </div>
+                  <div className='sidebyleft'> <a href='/results/4'>Leader Board </a> </div>
                   <div className='sidebyright'> <a href='/enter/5/3'> Take Test </a> </div>
               </div>
               <div className='sidebytop'>

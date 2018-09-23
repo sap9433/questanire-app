@@ -20,7 +20,7 @@ getScore = function(req) {
 	    const isMatch = _.find(questions, {text: ans.text, ans: [ans.ans]});
         marks += isMatch ? (1.0/questionCount) : 0;
 	})
-	return [marks.toFixed(2), time ,(marks * 1000 - req.body.time).toFixed(2)];
+	return [(time/questionCount).toFixed(2), marks.toFixed(2)];
 }
 
 exports.answerSubmitted = function (req, res) {
@@ -31,7 +31,7 @@ exports.answerSubmitted = function (req, res) {
   const marks = getScore(req);
 
   fs.appendFile("./leaderboar.txt", 
-  	`${req.session.user.name}|${req.session.user.user_email}|${new Date()}|${marks[0]}|${marks[1]}|${marks[2]}\n`, 
+  	`${req.session.user.name}|${req.session.user.user_email}|${new Date()}|${marks[0]}|${marks[1]}\n`, 
   	function(err) {
     if(err) {
         return res.json({error: true});
@@ -48,7 +48,16 @@ exports.getLeaderBoard = function (req, res) {
   fs.readFile('./leaderboar.txt', 'utf8', function(err, contents) {
     let allUser = contents.split('\n');
     allUser.splice(-1,1);
-    return res.json({msg: allUser});
+    let leaderboard = allUser.map((row) => {
+      row = row.split('|');
+      return {
+        data: row, 
+        val: -1 * parseFloat(row.slice(-1)[0]),
+        time: parseFloat(row.slice(-2, -1)[0])
+      };
+    });
+    leaderboard = _.sortBy(leaderboard, ['val', 'time']);
+    return res.json({msg: _.slice(leaderboard, 0, 10)});
   });
 }
 

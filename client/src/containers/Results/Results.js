@@ -25,7 +25,8 @@ export default class Results extends Component {
 		super(props); // eslint-disable-line
 		this.state = { // eslint-disable-line
 			leaderboard: [],
-			count: 5
+			count: 5,
+			error: null
 		};
 	}
 
@@ -36,24 +37,15 @@ export default class Results extends Component {
 	        data => {
 	          if(data.error){
 	            this.setState({
-	              error: data.error
+	              error: data.message
 	            })
 	          } else{
-	          	let leaderboard = data.msg.map((row) => {
-	          		row = row.split('|');
-	          		return {
-	          			data: row, 
-	          			val: -1 * parseFloat(row.slice(-1)[0]),
-	          			time: new Date(row[2])
-	          		};
-	          	});
-	          	leaderboard = _.sortBy(leaderboard, ['val']);
-	            this.setState({leaderboard});
+	            this.setState({leaderboard: data.msg});
 	          }
 	        },
 	        err => this.setState({ startTestError: JSON.stringify(err) })
 	    );
-	    setTimeout(this.getLeaderBoard.bind(this), 18000);
+	    setTimeout(this.getLeaderBoard.bind(this), 15000);
 	}
 
 	componentDidMount = () => {
@@ -61,6 +53,10 @@ export default class Results extends Component {
   	};
 
 	render() {
+		const {
+	      match: { params: { count } }
+	    } = this.props;
+
   	return (
 			<Fragment>
 				<div className='result_wrapper'>
@@ -79,17 +75,19 @@ export default class Results extends Component {
 					</div>
 					<div className="challenge"
 						>
-						{this.state.leaderboard.slice(0,this.state.count).map((user, i) =>{
+						{this.state.leaderboard.slice(0, count).map((user, i) =>{
 							return(
-								<div className='leader_row'>
+								<div key={i} className='leader_row'>
 									<span className='countn'> {i+1}. </span>
 									<span className='name'>{_.truncate(_.startCase(user.data[0]), {'length': 20})}</span>
-									<span className='elapsed'>{`Took ${user.data[4]} sec at ${moment(user.data[2]).format('hh:mm A')}` } </span>
-									<span className='marks'>{ user.data[3] * 100}%</span>
+									<span className='elapsed'>{`${moment(user.data[2]).format('hh:mm A')}` } </span>
+									<span className='time'>{ user.data[3]} sec/qstn</span>
+									<span className='marks'>{ user.data[4] * 100}%</span>
 								</div>
 							)
 						})}
 					</div>
+					{this.state.error}
 					<div>
 						 <img className='naspp' src={Naspp} alt="naspp"/>
 					</div>

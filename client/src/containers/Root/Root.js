@@ -90,7 +90,7 @@ class Root extends Component {
             <Switch>
               <Route exact path="/" render={(props) => <Login user={user} {...props} />}/>
               <Route exact path="/register/login" render={(props) => <Login user={user} {...props} />}/>     
-              <Route path="/results" render={(props) => <Results user={user} {...props}/>}/>
+              <Route path="/results/:count" render={(props) => <Results user={user} {...props}/>}/>
               <Route path="/enter/:testid/:time" render={(props) => <CEnter user={user} {...props}/>}/>
               <Route path="/onboard/:testid/:time" render={(props) => <COnboard user={user} {...props}/>}/>
               <Route path="/taketest/:testid/:time" render={(props) => <TakeTest user={user} {...props}/>}/>

@@ -22,12 +22,17 @@
   border: 1px solid #dacaca;
   padding: 14px;
   margin: 2px;
-  border-radius: 2px; }
+  border-radius: 2px;
+  display: flex;
+  align-items: center; }
+  .leader_row span {
+    flex-grow: 1;
+    display: inline-block;
+    color: #eb7125; }
 
 .marks {
   font-size: 2.5rem;
   float: right;
-  padding-top: 0.5rem;
   color: #012b72bd; }
 
 .name {
@@ -35,8 +40,7 @@
   font-size: 2.3rem; }
 
 .countn {
-  font-size: 2.3rem;
-  color: #eb7125; }
+  font-size: 2.3rem; }
 
 .certentLogo {
   position: absolute;
