@@ -158,7 +158,7 @@ export class TakeTest extends Component {
           _.shuffle(this.state.questions).map((question, ind) => {
             return(
               <div key={ind}>
-                <input className="question" name={`text${ind}`} type="text" value={question.text} disabled /> 
+                <input className="question" name={`text${ind}`} type="text" value={question.text} readonly /> 
                 {
                   _.shuffle(question.options).map((option, indx) => {
                     return(
