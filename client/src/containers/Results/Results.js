@@ -78,11 +78,13 @@ export default class Results extends Component {
 						{this.state.leaderboard.slice(0, count).map((user, i) =>{
 							return(
 								<div key={i} className='leader_row'>
-									<span className='countn'> {i+1}. </span>
-									<span className='name'>{_.truncate(_.startCase(user.data[0]), {'length': 20})}</span>
-									<span className='elapsed'>{`${moment(user.data[2]).format('hh:mm A')}` } </span>
-									<span className='time'>{ user.data[3]} sec/qstn</span>
-									<span className='marks'>{ user.data[4] * 100}%</span>
+									<div className='countn'> {i+1}. </div>
+									<div className='name'>{_.truncate(_.startCase(user.data[0]), {'length': 20})}</div>
+									<div className='elapsed'>{`${moment(user.data[2]).format('hh:mm A')}` } </div>
+									<div className='marks'>
+										<div className='stack'>{ user.data[4] * 100}%</div>
+										<div className='time'>({ user.data[3]}s/qstn)</div>
+									</div>
 								</div>
 							)
 						})}

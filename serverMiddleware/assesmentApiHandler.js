@@ -76,12 +76,12 @@ exports.deleteboard = function (req, res) {
     return res.json({error: true, message: 'You dont have permission to delete'});
   }
   const newName = new Date().toISOString();
-  fs.rename('./leaderboar.txt', `./leaderboar_${newName}.txt`, function(err) {
+  fs.rename('./leaderboar.txt', `./leaderboar_${newName}.csv`, function(err) {
     if ( err ){
       return res.json({msg: 'Cant refresh file'});
     } else{
        fs.closeSync(fs.openSync('./leaderboar.txt', 'w'));
-       return res.json({msg: 'File successfully deleted'});
+       return res.download(`./leaderboar_${newName}.csv`);
     }
   });
 }

@@ -1,4 +1,0 @@
-Diksha Raut|diksha@raut.com|Sun Sep 23 2018 02:33:56 GMT-0500 (CDT)|6.00|0.60
-A Raut|diksha@raut.com|Sun Sep 23 2018 02:33:56 GMT-0500 (CDT)|2.00|0.59
-B Raut|diksha@raut.com|Sun Sep 23 2018 02:33:56 GMT-0500 (CDT)|3.00|0.60
-C Raut|diksha@raut.com|Sun Sep 23 2018 02:33:56 GMT-0500 (CDT)|1.19|0.59

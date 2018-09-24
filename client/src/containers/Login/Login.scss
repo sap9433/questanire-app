@@ -79,29 +79,30 @@
     }
 }
 
-.login_wrapper {
-    .bottomImg {
+.bottomImg {
         position: relative;
         left: 32%;
         z-index: 1;
         height: 9%;
         width: 17%;
         padding-top: 10px;
-    }
 }
 
 .sidebytop {
     width: 100%;
     overflow: hidden;
+    margin: 20px;
 }
 
 .sidebyleft {
     width: 600px;
     float: left;
+    margin: 20px;
 }
 
 .sidebyright {
     margin-left: 620px;
+    margin: 20px;
 }
 
 .error {

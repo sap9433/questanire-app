@@ -61,7 +61,7 @@
 .login_wrapper .goto_login {
   cursor: pointer; }
 
-.login_wrapper .bottomImg {
+.bottomImg {
   position: relative;
   left: 32%;
   z-index: 1;
@@ -71,14 +71,17 @@
 
 .sidebytop {
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 20px; }
 
 .sidebyleft {
   width: 600px;
-  float: left; }
+  float: left;
+  margin: 20px; }
 
 .sidebyright {
-  margin-left: 620px; }
+  margin-left: 620px;
+  margin: 20px; }
 
 .error {
   font-size: 3rem;

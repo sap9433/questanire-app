@@ -123,26 +123,50 @@ class Login extends Component {
         }
         {user && user.account_type === 1 &&
         <div>
-          <p>You are currently logged in as {user.name}.</p>
+          <img className='bottomImg' src={bottom} alt="nugget" />
+          <p>
+            You are currently logged in as {user.name}. Your account type is <strong>{user.account_type === 1 ? ' Admin ' : 'Quiz Taker'}</strong>
+          </p>
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">{user.name}</h5>
-              <p className="card-text"> Your account type is <strong>{user.account_type === 1 ? ' Admin ' : 'Quiz Taker'}</strong> . Thank you for registering with us</p>
-              <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a>
               <div className='sidebytop'>
-                  <div className='sidebyleft'> <a href='/results/4'>Leader Board </a> </div>
-                  <div className='sidebyright'> <a href='/enter/5/3'> Take Test </a> </div>
+                  <div className='sidebyleft'> 
+                    <Button variant="contained" color="primary">
+                      <a href='/results/4'>Leader Board</a>
+                    </Button>
+                  </div>
+                  <div className='sidebyright'>
+                    <Button variant="contained" color="primary">
+                      <a href='/enter/5/3'> Take Test </a>
+                    </Button> 
+                  </div>
               </div>
               <div className='sidebytop'>
-                  <div className='sidebyleft'> <a href='/api/download'> Download </a> </div>
-                  <div className='sidebyright'> <a href='/api/delete'> Delete Leader board </a> </div>
+                  <div className='sidebyleft'>
+                    <Button variant="contained" color="primary">
+                      <a href='/api/download'> Download </a>
+                    </Button>
+                  </div>
+                  <div className='sidebyleft'>
+                    <Button variant="contained" color="primary" onClick={doLogout}>
+                      <a href='/'> Logout </a>
+                    </Button>
+                  </div>
+                  <div className='sidebyright'>
+                    <Button variant="contained" color="primary">
+                      <a href='/api/delete'> Delete Leader board </a>
+                    </Button>
+                  </div>
               </div>
             </div>
           </div>
         </div>
         }
         {user && user.account_type === 2 &&
-          <div className='error'> You are not authorised to see this page <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a></div>
+          <div className='error'> 
+            You are not authorised to see this page 
+            <a href="/" onClick={doLogout} className="btn btn-primary" >Log out</a>
+          </div>
         }
       </div>
     );
