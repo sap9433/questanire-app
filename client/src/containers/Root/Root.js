@@ -45,6 +45,12 @@ const TakeTest = Loadable({
   loading: Loading,
 });
 
+const Editquestion = Loadable({
+  loader: () => import('../Editquestion/Editquestion'),
+  loading: Loading,
+});
+
+
 class Root extends Component {
 
   componentDidMount() {
@@ -94,6 +100,7 @@ class Root extends Component {
               <Route path="/enter/:testid/:time" render={(props) => <CEnter user={user} {...props}/>}/>
               <Route path="/onboard/:testid/:time" render={(props) => <COnboard user={user} {...props}/>}/>
               <Route path="/taketest/:testid/:time" render={(props) => <TakeTest user={user} {...props}/>}/>
+              <Route path="/editquestion" render={(props) => <Editquestion user={user} {...props}/>}/>
               <Route component={NotFound} />
            </Switch>
           </div>

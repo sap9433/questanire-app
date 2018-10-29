@@ -1,0 +1,58 @@
+.main__panel {
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+$height: calc(100vh - 72px);
+
+.editContainer {
+  height: $height;
+  overflow-y: auto;
+}
+
+.headerContainer {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(29, 29, 29);
+  position: fixed;
+  .logo__img {
+    position: absolute;
+    $size: 65px;
+    top: 3px;
+    left: 15px;
+    display: inline-block;
+    background: url('../../images/logo.png') no-repeat center center;
+    width: $size;
+    height: $size;
+    background-size: 80%;
+    margin: 0 10px 0 0;
+    border-radius: $size / 2;
+}
+
+  .submit__button {
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+  }
+}
+
+.question{
+    width: 100%;
+    height: 44px;
+    border: none;
+    padding-left: 2%;
+    font-size: 1rem;
+    margin-bottom: 1%;
+    background: #ececec;
+    border-radius: 4px;
+}
+
+.pagecontain{
+  padding: 3%;
+  margin-top: 6%!important;
+}
+
+.radio{
+  padding-bottom: 1%;
+  padding-left: 2%;
+  color: #eb7125;
+}

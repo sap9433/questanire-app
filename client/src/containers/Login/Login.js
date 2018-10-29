@@ -157,6 +157,11 @@ class Login extends Component {
                       <a href='/api/delete'> Delete Leader board </a>
                     </Button>
                   </div>
+                  <div className='sidebyright'>
+                    <Button variant="contained" color="primary">
+                      <a href='/editquestion'> Edit / Update questionnaire </a>
+                    </Button>
+                  </div>
               </div>
             </div>
           </div>
