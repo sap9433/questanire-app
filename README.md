@@ -5,14 +5,17 @@
 ## Running locally
 
 ```
-git clone git@github.com:NuggetAI/nugget.git
-cd nugget
+git clone https://github.com/sap9433/certent.git
+cd certent
 npm i
 
 cd client
 npm i
 
 cd ..
+npm run dev
+
+for production run 
 npm start
 ```
 
