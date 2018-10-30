@@ -1,1 +1,5 @@
 Rahim Queresdhi|rahim@quereshi.com|Mon Oct 29 2018 09:31:08 GMT-0500 (CDT)|1.80|0.00
+asdasd dasdas|asdas@asdasd.dasd|Mon Oct 29 2018 20:39:16 GMT-0500 (CDT)|12.40|0.80
+Sayantan Roy|sayantan@gmail.com|Mon Oct 29 2018 20:41:09 GMT-0500 (CDT)|11.20|0.80
+Rahul Khanna|Some@some.com|Mon Oct 29 2018 20:43:16 GMT-0500 (CDT)|1.80|0.80
+Rahul Khanna|rahul@khanna.com|Mon Oct 29 2018 20:44:19 GMT-0500 (CDT)|2.25|1.00
