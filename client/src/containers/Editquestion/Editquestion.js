@@ -105,12 +105,12 @@ export class Editquestion extends Component {
           _.shuffle(this.state.questions).map((question, ind) => {
             return(
               <div key={ind}>
-                <input className="question" name={`text${ind}`} type="text" value={question.text} readonly /> 
+                <input className="question" name={`text${ind}`} type="text" value={question.text}/> 
                 {
                   _.shuffle(question.options).map((option, indx) => {
                     return(
                       <div className="radio" key={indx}>
-                        <input type="radio" value={option} name={`radio${ind}`}/> {option}
+                        <input type="text" value={option} style={{width: '100%'}} name={`radio${ind}`}/>
                       </div>
                     )
                   })
@@ -125,7 +125,7 @@ export class Editquestion extends Component {
             className="submit__button"
             variant="contained"
             color="primary"
-            onClick={this.handleTestsubmit}
+            onClick={() => alert('Under Construction')}
           >
             SUBMIT
           </Button>
