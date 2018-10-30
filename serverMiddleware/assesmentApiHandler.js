@@ -31,7 +31,7 @@ exports.answerSubmitted = function (req, res) {
   const marks = getScore(req);
 
   fs.appendFile("./leaderboar.txt", 
-  	`${req.session.user.name}|${req.session.user.user_email}|${new Date()}|${marks[0]}|${marks[1]}\n`, 
+  	`${user.name}|${user.user_email}|${new Date()}|${marks[0]}|${marks[1]}|${user.company}|${user.phone}\n`, 
   	function(err) {
     if(err) {
         return res.json({error: true});

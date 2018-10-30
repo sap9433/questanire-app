@@ -3,3 +3,5 @@ asdasd dasdas|asdas@asdasd.dasd|Mon Oct 29 2018 20:39:16 GMT-0500 (CDT)|12.40|0.
 Sayantan Roy|sayantan@gmail.com|Mon Oct 29 2018 20:41:09 GMT-0500 (CDT)|11.20|0.80
 Rahul Khanna|Some@some.com|Mon Oct 29 2018 20:43:16 GMT-0500 (CDT)|1.80|0.80
 Rahul Khanna|rahul@khanna.com|Mon Oct 29 2018 20:44:19 GMT-0500 (CDT)|2.25|1.00
+Rohit Khanna|saptarshichatterjee1@gmail.com|Mon Oct 29 2018 20:54:43 GMT-0500 (CDT)|3.00|1.00|Some Shitty Company|+1887690872
+Rahul Roy|saptarshichatterjee1@gmail.com|Mon Oct 29 2018 20:55:16 GMT-0500 (CDT)|2.25|1.00|Apple|+177654678

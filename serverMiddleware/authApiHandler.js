@@ -28,7 +28,9 @@ exports.candidateLogin = function(req, res) {
             name: req.body.name,
             user_id: -1,
             account_type: 2,
-            user_email: req.body.email
+            user_email: req.body.email,
+            company: req.body.company,
+            phone: req.body.phone
         };
         res.json(req.session.user);
     }

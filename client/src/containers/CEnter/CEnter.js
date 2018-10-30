@@ -25,6 +25,8 @@ class CEnter extends Component {
       fname: '',
       lname: '',
       email: '',
+      company: '',
+      phone: ''
     };
   }
   
@@ -39,7 +41,7 @@ class CEnter extends Component {
 
   handleSignin = (evt) => {
     evt.preventDefault();
-    const { fname, lname, email } = this.state;
+    const { fname, lname, email, company, phone } = this.state;
     const { clientSoftLogin } = this.props;
     if (fname.length < 3 || lname.length < 3) {
       this.setState({ valid: 1 });
@@ -51,7 +53,9 @@ class CEnter extends Component {
     }
     clientSoftLogin({ 
       name: `${fname} ${lname}`,
-      email
+      email,
+      company,
+      phone
     });
   }
 
@@ -95,6 +99,24 @@ class CEnter extends Component {
                 className="text_field"
                 value={this.state.lname}
                 onChange={this.handleChangeInfo('lname')}
+                margin="normal"
+              />
+
+              <TextField
+                id="company"
+                label="Company"
+                className="text_field"
+                value={this.state.company}
+                onChange={this.handleChangeInfo('company')}
+                margin="normal"
+              />
+
+              <TextField
+                id="phome"
+                label="Phone"
+                className="text_field"
+                value={this.state.phone}
+                onChange={this.handleChangeInfo('phone')}
                 margin="normal"
               />
 
