@@ -9,30 +9,10 @@ $height: calc(100vh - 72px);
   overflow-y: auto;
 }
 
-.headerContainer {
-  height: 70px;
-  width: 100%;
-  background-color: rgb(29, 29, 29);
-  position: fixed;
-  .logo__img {
-    position: absolute;
-    $size: 65px;
-    top: 3px;
-    left: 15px;
-    display: inline-block;
-    background: url('../../images/logo.png') no-repeat center center;
-    width: $size;
-    height: $size;
-    background-size: 80%;
-    margin: 0 10px 0 0;
-    border-radius: $size / 2;
-}
-
-  .submit__button {
-    margin-top: 20px;
-    margin-right: 20px;
-    float: right;
-  }
+.submit__button {
+  margin-top: 20px;
+  margin-right: 20px;
+  float: right;
 }
 
 .question{
@@ -46,13 +26,18 @@ $height: calc(100vh - 72px);
     border-radius: 4px;
 }
 
-.pagecontain{
-  padding: 3%;
-  margin-top: 6%!important;
-}
-
 .radio{
   padding-bottom: 1%;
   padding-left: 2%;
   color: #eb7125;
+}
+
+.instruction{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #d6c6c6;
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+  color: #65658a;
 }

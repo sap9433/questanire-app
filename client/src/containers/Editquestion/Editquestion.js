@@ -22,22 +22,12 @@ export class Editquestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      testStarted: true,
       questions: []
     }
   }
 
   componentDidMount = () => {
-    const {
-      match: { params: { testid, time } }
-    } = this.props;
-
-    if(parseInt(testid) && parseInt(time) && parseInt(testid) > 15 && parseInt(time) > 10){
-      alert(' Testid and Time must be Intger and within 25 and 8 respectively');
-      return false;
-    }
-    this.setState({ testStarted: true })
-    const url = `/api/gettest/${testid}`;
+    const url = `/api/gettest/50`;
     
     ajax.getJSON(url)
     .subscribe(
@@ -53,15 +43,6 @@ export class Editquestion extends Component {
         err => this.setState({ startTestError: JSON.stringify(err) })
     );
   };
-
-  handleCancelTest = () => {
-    const {
-      match: { params: { testid, time } },
-      history: { push }
-    } = this.props;
-    this.setState({ showStartModal: false });
-    this.props.history.push(`/enter/${testid}/${time}`);
-  }
 
   componentWillReceiveProps(nextProps){
     const {
@@ -90,8 +71,8 @@ export class Editquestion extends Component {
       user
     } = this.props;
 
-    if(!user || user.account_type !== 2){
-      alert(' You are not authorised to submit this test. Log out and log in again');
+    if(!user || user.account_type !== 1){
+      alert(' You are not authorised to Edit this test. Log out and log in again as Admin');
       return false;
     }
 
@@ -111,47 +92,13 @@ export class Editquestion extends Component {
     submitAssesment({ans:result, time: timeElapsed});
   };
 
-
-  handleCountTimer = (fullTime, minutes, seconds) => {
-    this.fullTime = fullTime;
-    this.minutes = minutes;
-    this.seconds = seconds;
-  }
-
   render() {
     const {
       match: { params: { time } },
     } = this.props;
     return ( 
     <Grid container>
-      <Grid item xs={12}>
-        <div className="headerContainer">
-          <Grid container>
-            <Grid item md={5} xs={5}>
-              <div className="logo__img" />
-            </Grid>
-            <Grid item md={5} xs={5}>
-              <Timer 
-                onFinish={this.handleFinishTest} 
-                onRender={this.handleCountTimer}
-                timerStarted={this.state.testStarted}
-                key={this.state.testStarted}
-                time={time}
-              />
-            </Grid>
-            <Grid item md={2} xs={2}>
-              <Button
-                className="submit__button"
-                variant="contained"
-                color="primary"
-                onClick={this.handleTestsubmit}
-              >
-                SUBMIT
-              </Button>
-            </Grid>
-          </Grid>
-        </div>
-      </Grid>
+      <div className='instruction'> Edit question and answer. Please make sure that answer conatains exact text with out space</div>
       <Grid item xs={12} className="pagecontain">
         <form ref={form => this.ansform = form}>
         {
@@ -173,6 +120,16 @@ export class Editquestion extends Component {
           })
         }
         </form>
+        <Grid item md={2} xs={2}>
+          <Button
+            className="submit__button"
+            variant="contained"
+            color="primary"
+            onClick={this.handleTestsubmit}
+          >
+            SUBMIT
+          </Button>
+        </Grid>
       </Grid>
     </Grid>
     );
