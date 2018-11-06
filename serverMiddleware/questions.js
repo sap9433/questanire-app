@@ -15,7 +15,7 @@ exports.questions = [{
         ans: ['True']
     },
     {
-        text: 'On October 1, 2018, EDGAR release 18.3 included new validations to notify filers of potential XBRL tagging issues in submissions, which of the following is not included in the update',
+        text: 'On October 1, 2018, EDGAR release 18.3 included new validations to notify filers of potential XBRL tagging issues in submissions, which of the following is not included in the update:',
         options: [
             'Provide an EDGAR warning (not a suspension) when certain US-GAAP and IFRS numeric reporting items are tagged incorrectly as negative',
             'Provide an EDGAR warning (not a suspension) if a filing uses deprecated tags in a submission',
@@ -25,7 +25,7 @@ exports.questions = [{
         ans: ['Provide an EDGAR warning (not a suspension) if a filing uses company-specific tag information in the Element ID']
     },
     {
-        text: 'XBRL US and an alliance of member companies have created what to address concerns about, and to improve the utility of, XBRL financial data filed with the U.S. Securities and Exchange Commission (SEC)',
+        text: 'XBRL US and an alliance of member companies have created what to address concerns about, and to improve the utility of, XBRL financial data filed with the U.S. Securities and Exchange Commission (SEC)?',
         options: [
             'XBRL Data Committee',
             'The XBRL Experts Group',

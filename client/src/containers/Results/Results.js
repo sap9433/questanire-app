@@ -64,8 +64,8 @@ export default class Results extends Component {
 					<div>
 						 <img className='certentLogo' src={Bottom} alt="logo"/>
 					</div>
-					{/*
-						<div className='prizes'>
+					
+					<div className='prizes'>
 						 Prizes
 					</div>
 					<div className='car'>
@@ -74,7 +74,7 @@ export default class Results extends Component {
 					<div className='alexa'>
 						 <img src={Alexa} alt="alexa"/>
 					</div>
-					*/}
+					
 					<div className="challenge"
 						>
 						{this.state.leaderboard.slice(0, count).map((user, i) =>{
