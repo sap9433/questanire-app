@@ -25,7 +25,7 @@ exports.questions = [{
         ans: ['Provide an EDGAR warning (not a suspension) if a filing uses company-specific tag information in the Element ID']
     },
     {
-        text: 'XBRL US and an alliance of member companies have created what to address concerns about, and to improve the utility of, XBRL financial data filed with the U.S. Securities and Exchange Commission (SEC)?',
+        text: 'XBRL US and an alliance of member companies have created WHAT to address concerns about, and to improve the utility of, XBRL financial data filed with the U.S. Securities and Exchange Commission (SEC)?',
         options: [
             'XBRL Data Committee',
             'The XBRL Experts Group',

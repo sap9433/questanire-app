@@ -60,7 +60,7 @@ export default class Results extends Component {
   	return (
 			<Fragment>
 				<div className='result_wrapper'>
-					<div className="header"> Certent Challenge Quiz <div className="lboard"> Equity Knowledge LEADERBOARD </div> </div>
+					<div className="header"> Certent Challenge Quiz <div className="lboard"> LEADERBOARD </div> </div>
 					<div>
 						 <img className='certentLogo' src={Bottom} alt="logo"/>
 					</div>
