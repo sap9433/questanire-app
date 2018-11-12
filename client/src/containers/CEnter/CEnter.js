@@ -23,10 +23,14 @@ class CEnter extends Component {
     this.state = {
       valid: 0,
       fname: '',
-      lname: '',
       email: '',
       company: '',
-      phone: ''
+      phone: '',
+      investorname: '',
+      fundamount: '',
+      nextfunding: '',
+      nextfundingdate: '',
+      capsolution: ''
     };
   }
   
@@ -41,9 +45,9 @@ class CEnter extends Component {
 
   handleSignin = (evt) => {
     evt.preventDefault();
-    const { fname, lname, email, company, phone } = this.state;
+    const { fname, email, company, phone } = this.state;
     const { clientSoftLogin } = this.props;
-    if (fname.length < 3 || lname.length < 3) {
+    if (fname.length < 4 || fname.split(' ').length < 2) {
       this.setState({ valid: 1 });
       return;
     }
@@ -52,10 +56,15 @@ class CEnter extends Component {
       return;
     }
     clientSoftLogin({ 
-      name: `${fname} ${lname}`,
+      name: `${fname}`,
       email,
       company,
-      phone
+      phone,
+      investorname,
+      fundamount,
+      nextfunding,
+      nextfundingdate,
+      capsolution
     });
   }
 
@@ -86,19 +95,10 @@ class CEnter extends Component {
 
               <TextField
                 id="fname"
-                label="First Name"
+                label="Full Name"
                 className="text_field"
                 value={this.state.fname}
                 onChange={this.handleChangeInfo('fname')}
-                margin="normal"
-              />
-
-              <TextField
-                id="lname"
-                label="Last Name"
-                className="text_field"
-                value={this.state.lname}
-                onChange={this.handleChangeInfo('lname')}
                 margin="normal"
               />
 
@@ -126,6 +126,49 @@ class CEnter extends Component {
                 className="text_field"
                 value={this.state.email}
                 onChange={this.handleChangeInfo('email')}
+                margin="normal"
+              />
+              <div className="questiontxt"> Have you raised funding yet? If yes, from whom? </div>
+              <TextField
+                id="investorname"
+                label="Investor name"
+                className="text_field"
+                value={this.state.investorname}
+                onChange={this.handleChangeInfo('investorname')}
+                margin="normal"
+              />
+              <TextField
+                id="fundamount"
+                label="How much funding raised ($)"
+                className="text_field"
+                value={this.state.fundamount}
+                onChange={this.handleChangeInfo('fundamount')}
+                margin="normal"
+              />
+              <TextField
+                id="nextfunding"
+                label="Next funding amount ($)"
+                className="text_field"
+                value={this.state.nextfunding}
+                onChange={this.handleChangeInfo('nextfunding')}
+                margin="normal"
+              />
+              <div className="questiontxt"> Next funding date? </div>
+              <TextField
+                id="nextfundingdate"
+                className="text_field"
+                value={this.state.nextfundingdate}
+                onChange={this.handleChangeInfo('nextfundingdate')}
+                margin="normal"
+                type="date"
+              />
+              <div className="questiontxt"> What solution are you using for CAP tables today? </div>
+              <TextField
+                id="capsolution"
+                label="E.g. Spreadsheets, Attorney, Carta, Captable.io"
+                className="text_field"
+                value={this.state.capsolution}
+                onChange={this.handleChangeInfo('capsolution')}
                 margin="normal"
               />
               

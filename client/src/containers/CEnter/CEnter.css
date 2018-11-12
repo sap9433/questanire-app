@@ -63,6 +63,11 @@
   opacity: 1;
   transition: opacity 600ms, visibility 600ms; }
 
+.login_wrapper .questiontxt {
+  color: #ff9800;
+  padding-top: 10px;
+  margin-bottom: -20px; }
+
 .bottomImg {
   position: absolute;
   left: 70%;
