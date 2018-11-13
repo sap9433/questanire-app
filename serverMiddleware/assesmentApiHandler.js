@@ -32,18 +32,7 @@ exports.answerSubmitted = function (req, res) {
   const marks = getScore(req);
 
   fs.appendFile("./leaderboar.txt", 
-  	`${user.name}|
-    ${user.user_email}|
-    ${new Date()}|
-    ${marks[0]}|
-    ${marks[1]}|
-    ${user.company}|
-    ${user.phone}|
-    ${user.investorname}|
-    ${user.fundamount}|
-    ${user.nextfunding}|
-    ${user.nextfundingdate}|
-    ${user.capsolution}|
+  	`${user.name}|${user.user_email}|${new Date()}|${marks[0]}|${marks[1]}|${user.company}|${user.phone}|${user.investorname}|${user.fundamount}|${user.nextfunding}|${user.nextfundingdate}|${user.capsolution}|
     \n`, 
   	function(err) {
     if(err) {

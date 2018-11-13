@@ -5,3 +5,16 @@ Rahul Khanna|Some@some.com|Mon Oct 29 2018 20:43:16 GMT-0500 (CDT)|1.80|0.80
 Rahul Khanna|rahul@khanna.com|Mon Oct 29 2018 20:44:19 GMT-0500 (CDT)|2.25|1.00
 Rohit Khanna|saptarshichatterjee1@gmail.com|Mon Oct 29 2018 20:54:43 GMT-0500 (CDT)|3.00|1.00|Some Shitty Company|+1887690872
 Rahul Roy|saptarshichatterjee1@gmail.com|Mon Oct 29 2018 20:55:16 GMT-0500 (CDT)|2.25|1.00|Apple|+177654678
+Saptarshi Chatterjee|
+    fwfdw@sdsd.dsd|
+    Mon Nov 12 2018 23:36:35 GMT-0600 (CST)|
+    3.75|
+    0.50|
+    sc|
+    dfwfw|
+    Have you raised funding yet? If yes, from whom? Investor name|
+    How much funding raised ($)|
+    Next funding amount ($)|
+    2018-11-23|
+    on are you using for CAP tables today? E.g. Spreadsheets, Attorney, Carta, Captable.io|
+    
