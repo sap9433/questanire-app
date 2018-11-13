@@ -31,152 +31,12 @@ exports.questions = [{
     {
         text: 'What does the acronym EBITDA stand for?',
         options: [
-            'Earnings by increasing total development and analyzation',
+            'A. Within 5 days from the grant date',
             'Effects beyond Internal Trade Date Assets',
             'Explanation Basis of Interpreting Deferred Assets',
             'Earnings before interest, tax, depreciation and amortization'
         ],
         ans: ['Earnings before interest, tax, depreciation and amortization']
-    },
-    {
-        text: 'Last night EDGAR and I got in a heated discussion, based on the choices below what was it about?',
-        options: [
-            'He was late for work again and I had to process all the new hire grants myself?',
-            'It was related to my Section 16 Insider reporting form filings.',
-            'He said all my Black Scholes calculation and expense was incorrect.',
-            'He told me that non-affiliates could have discounted Incentive Stock Options.'
-        ],
-        ans: ['It was related to my Section 16 Insider reporting form filings.']
-    },
-    {
-        text: 'What type of Award can receive Dividend Equivalent Units (DEUs)?',
-        options: [
-            'Restricted Stock Awards',
-            'Restricted Stock Units',
-            'Stock Appreciation Rights',
-            'Warrants'
-        ],
-        ans: ['Restricted Stock Units']
-    },
-    {
-        text: 'Based on the choices below, what type of grant is a "Full-Value Award"',
-        options: [
-            'Non-Qualified Stock Option',
-            'Incentive Stock Option',
-            'Stock Appreciation Rights',
-            'Restricted Stock Units'
-        ],
-        ans: ['Restricted Stock Units']
-    },
-    {
-        text: 'What is the Form S-8 used for?',
-        options: [
-            'Used by publicly traded companies to register securities that will be offered to its employees through a benefit or incentive plan',
-            'Registration exemption used by Privately Held companies',
-            'Form to request your company’s securities be listed on the NYSE',
-            'Used by Insiders to preselect future sale date of their securities to mitigate any short swings profits.'
-        ],
-        ans: ['Used by publicly traded companies to register securities that will be offered to its employees through a benefit or incentive plan']
-    },
-    {
-        text: 'Under IRC 423 to have a “Qualified ESPP Plan” how soon must plan be approved by shareholders after adoption by the board?',
-        options: [
-            'The plan must be approved by Shareholders before the first purchase',
-            'The plan must be approved by Shareholders within 30 days of adoption by the board',
-            'The plan must be approved within 12 months of plan adoption by the board',
-            'The plan does not require shareholder approval to be a qualified ESPP plan'
-        ],
-        ans: ['The plan must be approved within 12 months of plan adoption by the board']
-    },
-    {
-        text: 'Based on the choices below what is a common industry term for Non-Employee expense?',
-        options: [
-            'Sam to the Store',
-            'Zoey to the Zoo',
-            'Mark to Market',
-            'Wally to Wall Street'
-        ],
-        ans: ['Mark to Market']
-    },
-    {
-        text: 'Which of the following is not an Option Pricing Model?',
-        options: [
-            'Black-Scholes',
-            'Hull-White',
-            'Schlosser-Fimple',
-            'All of the above are option pricing models'
-        ],
-        ans: ['Schlosser-Fimple']
-    },
-    {
-        text: 'When it comes to accounting what does the term “Fair Value” mean?',
-        options: [
-            'The current trading price of our companies underlying stock',
-            'The total value of our company in the event of a liquidity event',
-            'The calculated expense reached by applying an option pricing model',
-            'The price of our company’s stock after completing a stock split.'
-        ],
-        ans: ['The calculated expense reached by applying an option pricing model']
-    },
-    {
-        text: 'When is the fair value on employee grants calculated?',
-        options: [
-            'On the date of vesting',
-            'On the date of exercise',
-            'On the date of termination',
-            'ON the date of grant'
-        ],
-        ans: ['ON the date of grant']
-    },
-    {
-        text: 'When discussing Accounting Modifications based on the following choices what does a Type 3 modification relate to?',
-        options: [
-            'Improbable to Improbable',
-            'Improbable to Probable',
-            'Probable to Probable',
-            'Probable to Improbable'
-        ],
-        ans: ['Improbable to Probable']
-    },
-    {
-        text: 'What does the term Exercise Date mean when discussing IRC 423?',
-        options: [
-            'The date the employee exercises their stock options',
-            'The date the employee exercises their right to enroll in our ESPP plan.',
-            'The date the employee contributions are withheld from their paycheck',
-            'The date of the companies ESPP purchase.'
-        ],
-        ans: ['The date of the companies ESPP purchase.']
-    },
-    {
-        text: 'What is the length of time that must pass to have a Qualifying Disposition?',
-        options: [
-            'One year from Grant and two years from exercise',
-            'One year from exercise and two years from grant',
-            'All Same-Day Sale transactions are qualifying dispositions',
-            'One year from exercise or two years from grant'
-        ],
-        ans: ['One year from exercise and two years from grant']
-    },
-    {
-        text: 'What part of equity compensation does FIN28 relate to?',
-        options: [
-            'The number of shares that can be granted in any calendar year',
-            'The limitation on the amount of ESPP contributions a company can accept',
-            'The qualifications of a participant to receive a stock award',
-            'The accelerated method of expense amortization'
-        ],
-        ans: ['The accelerated method of expense amortization']
-    },
-    {
-        text: 'What is an "Evergreen Provision"?',
-        options: [
-            'An annual increase in the number of shares available under a plan with a one-time shareholder approval.',
-            'An annual increase in the plan number of shares available under a plan with shareholder approval required each year.',
-            'Our companies annual Christmas party fund paid for by added fees attached to every option exercise.',
-            'A provision to grant our executives new awards every year if our bonus pool reaches $1,000,000 per person'
-        ],
-        ans: ['An annual increase in the number of shares available under a plan with a one-time shareholder approval.']
     },
     {
         text: 'How soon must an 83(b) form be filed from the date of grant?',
@@ -188,4 +48,153 @@ exports.questions = [{
         ],
         ans: ['Within 30 days from the grant date']
     },
+    {
+        text: 'What is Rule 701 most commonly used for?',
+        options: [
+            'It is used by Private company participants to sell compensatory stock awards ',
+            'Used mainly by publicly traded companies as a registration exemption to the 1933 Act',
+            'Used most commonly by private companies as a registration exemption to grant or sell compensatory stock awards to employees and service-providers',
+            'It is used as an exemption by privately held companies from Section 16 reporting requirements'
+        ],
+        ans: ['Used most commonly by private companies as a registration exemption to grant or sell compensatory stock awards to employees and service-providers']
+    },
+    {
+        text: 'In the terminology of a venture capital what is a "Unicorn Company"?',
+        options: [
+            'A US-Based software company valued at over $1 billion by public or private market investors?',
+            'A Private Company with over $500,000,000 million in funding',
+            'A Kickstarter campaign with more than 1,000,000 backers online',
+            'A company that specializes in toys and stuffed animals that has completed their IPO'
+        ],
+        ans: ['A US-Based software company valued at over $1 billion by public or private market investors?']
+    },
+    {
+        text: 'What is the definition of Convertible Debt?',
+        options: [
+            'I bought a new convertible and now I must make a car payment each month',
+            'A loan that will be repaid in cash at a sub market interest rate ',
+            'A Note that will be repaid in cash at a standard market interest rate',
+            'A loan or note that will convert to another security type at the next round of funding generally at a discount plus interest.'
+        ],
+        ans: ['A loan or note that will convert to another security type at the next round of funding generally at a discount plus interest.']
+    },
+    {
+        text: '9.   What is a quick description about the difference between Private vs Public companies?',
+        options: [
+            'Private companies are owned by the company’s founders, management or a group of investors, while a public company held an initial public offering making ownership available to anyone.',
+            'B. Private companies do not allow the general public to come to their offices and visit during lunch time, where public companies welcome everyone all of the time',
+            'C. Private companies like to stay private by not putting signage out front of their offices, where public companies are required by law to advertise their locations',
+            'TD.    Only public companies can offer employee stock options'
+        ],
+        ans: ['Private companies are owned by the company’s founders, management or a group of investors, while a public company held an initial public offering making ownership available to anyone.']
+    },
+    {
+        text: 'What is the definition of Par Value as it relates to Common Stock?',
+        options: [
+            'The number of investors you impressed with your golf score',
+            'The minimum price someone can pay for your company’s stock as set in your company’s charter documents',
+            'The maximum price someone can pay for your company’s stock as set in your articles of incorporation ',
+        ],
+        ans: ['The minimum price someone can pay for your company’s stock as set in your company’s charter documents']
+    },
+    {
+        text: '12.  When speaking of 409A valuations what does the term “Market approach” mean?',
+        options: [
+            'An analysis of comparable private and public companies and transactions',
+            'An analysis of all tech related companies compared to my company',
+            'An analysis of all companies within a 25-mile radius of my corporate headquarters',
+            'An analysis of all companies with a stock price lower than $3.50 '
+        ],
+        ans: ['An analysis of comparable private and public companies and transactions']
+    },
+    {
+        text: '13.  How often do I need a 409A valuation',
+        options: [
+            'Every 12 Months',
+            'Every 12 Months and anytime your company closes a new funding round',
+            'It is at the company’s discretion ',
+            'It should be done one time right before we IPO.'
+        ],
+        ans: ['Every 12 Months and anytime your company closes a new funding round']
+    },
+    {
+        text: 'What does the abbreviation VC mean?',
+        options: [
+            'Very Common',
+            'Very Creative',
+            'Venture Capital',
+            'Venture Creation'
+        ],
+        ans: ['Venture Capital']
+    },
+    {
+        text: 'What is an "Exit Strategy"',
+        options: [
+            'A sign that hangs above a door to let you know how to leave',
+            'Planning how to leave a meeting early',
+            'A contingency plan that is executed by an investor, trader, VC, or business owner to liquidate a position in a financial asset or dispose of tangible business assets once certain predetermined criteria for either has been met or exceeded',
+            'The idea of selling your company once you have an offer that exceeds $500 million'
+        ],
+        ans: ['A contingency plan that is executed by an investor, trader, VC, or business owner to liquidate a position in a financial asset or dispose of tangible business assets once certain predetermined criteria for either has been met or exceeded']
+    },
+    {
+        text: '16.  What is ASC 820?',
+        options: [
+            'A new IRS rule for accounting ',
+            'A new game that Financial Accounting Standards Board’s (FASB) Generally Accepted Accounting Principles (GAAP) developed',
+            'The Accounting Standards Codification that offers guidance on how to value illiquid assets',
+            'The name of a VC strategy that helps VCs determine how valuable your company is'
+        ],
+        ans: ['The Accounting Standards Codification that offers guidance on how to value illiquid assets']
+    },
+    {
+        text: 'Should the date a stakeholder exercises their options and the date their stock certificate is issued be the same?',
+        options: [
+            'No, they don’t need to be. Its ok to have a delay between the two dates',
+            'Yes, always',
+            'Sometimes, but not when there is a genuine delay between the two dates',
+            'Only when the stockholder does really exercise their options on the date their stock certificate is actually issu'
+        ],
+        ans: ['Yes, always']
+    },
+    {
+        text: 'Many employees and investors have multiple option grants. When issuing shares, is it important to track which option is being exercised to create which certificate?',
+        options: [
+            'No',
+            'Maybe, but not always',
+            'Yes, always',
+            'Only when the issuance happens in the same year as the certificate is created.'
+        ],
+        ans: ['Yes, always']
+    },
+    {
+        text: 'Is it ok that CAP tables use abbreviated or incorrect names for the same person or company?',
+        options: [
+            'Yes its ok',
+            'Sometimes, but not always, because the cap tables are just a reporting tool',
+            'No, it’s never OK because when dealing with stock certificates, you have to be exact.',
+            'Yes, because we have records that prove what the actual name is when issuing stock certificates'
+        ],
+        ans: ['No, it’s never OK because when dealing with stock certificates, you have to be exact.']
+    },
+    {
+        text: 'Should CAP tables only show the number of shares or fully diluted percent ownership?',
+        options: [
+            'Only the number of shares are necessary to be included in a cap table',
+            'Sometimes, its ok to show number of shares and fully diluted ownership',
+            'The cap table should always show fully diluted percent ownership to prevent errors',
+            'The less information you have in a cap table, the better'
+        ],
+        ans: ['The cap table should always show fully diluted percent ownership to prevent errors']
+    },
+    {
+        text: 'Should you account for option expenses when updating your CAP table?',
+        options: [
+            'No, it’s not necessary',
+            'Sometimes, when the cap tables have expenses associated with options ',
+            'Yes, because there are always expenses associated with every option granted',
+            'It is not needed because there is never an expense associated with options granted that hits the balance sheet'
+        ],
+        ans: ['Yes, because there are always expenses associated with every option granted']
+    }
 ]

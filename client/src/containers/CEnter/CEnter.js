@@ -45,7 +45,7 @@ class CEnter extends Component {
 
   handleSignin = (evt) => {
     evt.preventDefault();
-    const { fname, email, company, phone } = this.state;
+    const { fname, email, company, phone, investorname, fundamount, nextfunding, nextfundingdate, capsolution } = this.state;
     const { clientSoftLogin } = this.props;
     if (fname.length < 4 || fname.split(' ').length < 2) {
       this.setState({ valid: 1 });

@@ -20,6 +20,7 @@ getScore = function(req) {
 	    const isMatch = _.find(questions, {text: ans.text, ans: [ans.ans]});
         marks += isMatch ? (1.0/questionCount) : 0;
 	})
+  // First val is time/qstn . Which is better if small . 2nd val is marks out of 100
 	return [(time/questionCount).toFixed(2), marks.toFixed(2)];
 }
 
@@ -31,7 +32,19 @@ exports.answerSubmitted = function (req, res) {
   const marks = getScore(req);
 
   fs.appendFile("./leaderboar.txt", 
-  	`${user.name}|${user.user_email}|${new Date()}|${marks[0]}|${marks[1]}|${user.company}|${user.phone}\n`, 
+  	`${user.name}|
+    ${user.user_email}|
+    ${new Date()}|
+    ${marks[0]}|
+    ${marks[1]}|
+    ${user.company}|
+    ${user.phone}|
+    ${user.investorname}|
+    ${user.fundamount}|
+    ${user.nextfunding}|
+    ${user.nextfundingdate}|
+    ${user.capsolution}|
+    \n`, 
   	function(err) {
     if(err) {
         return res.json({error: true});
@@ -52,8 +65,8 @@ exports.getLeaderBoard = function (req, res) {
       row = row.split('|');
       return {
         data: row, 
-        val: -1 * parseFloat(row.slice(-1)[0]),
-        time: parseFloat(row.slice(-2, -1)[0])
+        val: -1 * parseFloat(row.slice(-8,-7)[0]), //Actual marks out of 100. Want descending order hence -ve
+        time: parseFloat(row.slice(-7, -6)[0]) // This is time taken per qstn
       };
     });
     leaderboard = _.sortBy(leaderboard, ['val', 'time']);

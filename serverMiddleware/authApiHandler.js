@@ -30,7 +30,13 @@ exports.candidateLogin = function(req, res) {
             account_type: 2,
             user_email: req.body.email,
             company: req.body.company,
-            phone: req.body.phone
+            phone: req.body.phone,
+            investorname: req.body.investorname,
+            fundamount: req.body.fundamount,
+            nextfunding: req.body.nextfunding,
+            nextfundingdate: req.body.nextfundingdate,
+            capsolution: req.body.capsolution,
+
         };
         res.json(req.session.user);
     }
