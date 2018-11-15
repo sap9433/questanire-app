@@ -52,9 +52,9 @@ exports.getLeaderBoard = function (req, res) {
     let leaderboard = allUser.map((row) => {
       row = row.split('|');
       return {
-        data: row, 
-        val: -1 * parseFloat(row.slice(-9,-8)[0]), //Actual marks out of 100. Want descending order hence -ve
-        time: parseFloat(row.slice(-8, -7)[0]) // This is time taken per qstn
+        data: row,
+        val: -1 * parseFloat(row.slice(-8,-7)[0]), //Actual marks out of 100. Want descending order hence -ve
+        time: parseFloat(row.slice(-9, -8)[0]) // This is time taken per qstn
       };
     });
     leaderboard = _.sortBy(leaderboard, ['val', 'time']);
