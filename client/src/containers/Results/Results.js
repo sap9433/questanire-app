@@ -71,9 +71,11 @@ export default class Results extends Component {
 					<div className='car'>
 						 <img src={Car} alt="car"/>
 					</div>
-					<div className='alexa'>
-						 <img src={Alexa} alt="alexa"/>
-					</div>
+					{
+					// <div className='alexa'>
+					// 	 <img src={Alexa} alt="alexa"/>
+					// </div>
+				    }
 					
 					<div className="challenge"
 						>
