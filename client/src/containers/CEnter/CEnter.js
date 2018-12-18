@@ -112,15 +112,6 @@ class CEnter extends Component {
               />
 
               <TextField
-                id="phome"
-                label="Phone"
-                className="text_field"
-                value={this.state.phone}
-                onChange={this.handleChangeInfo('phone')}
-                margin="normal"
-              />
-
-              <TextField
                 id="email"
                 label="Email"
                 className="text_field"
@@ -128,50 +119,6 @@ class CEnter extends Component {
                 onChange={this.handleChangeInfo('email')}
                 margin="normal"
               />
-              <div className="questiontxt"> Have you raised funding yet? If yes, from whom? </div>
-              <TextField
-                id="investorname"
-                label="Investor name"
-                className="text_field"
-                value={this.state.investorname}
-                onChange={this.handleChangeInfo('investorname')}
-                margin="normal"
-              />
-              <TextField
-                id="fundamount"
-                label="How much funding raised ($)"
-                className="text_field"
-                value={this.state.fundamount}
-                onChange={this.handleChangeInfo('fundamount')}
-                margin="normal"
-              />
-              <TextField
-                id="nextfunding"
-                label="Next funding amount ($)"
-                className="text_field"
-                value={this.state.nextfunding}
-                onChange={this.handleChangeInfo('nextfunding')}
-                margin="normal"
-              />
-              <div className="questiontxt"> Next funding date? </div>
-              <TextField
-                id="nextfundingdate"
-                className="text_field"
-                value={this.state.nextfundingdate}
-                onChange={this.handleChangeInfo('nextfundingdate')}
-                margin="normal"
-                type="date"
-              />
-              <div className="questiontxt"> What solution are you using for CAP tables today? </div>
-              <TextField
-                id="capsolution"
-                label="E.g. Spreadsheets, Attorney, Carta, Captable.io"
-                className="text_field"
-                value={this.state.capsolution}
-                onChange={this.handleChangeInfo('capsolution')}
-                margin="normal"
-              />
-              
               <Button 
                 className="enter_but"
                 variant="contained" 
