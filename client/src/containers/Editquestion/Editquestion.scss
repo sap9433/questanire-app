@@ -1,0 +1,43 @@
+.main__panel {
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+$height: calc(100vh - 72px);
+
+.editContainer {
+  height: $height;
+  overflow-y: auto;
+}
+
+.submit__button {
+  margin-top: 20px;
+  margin-right: 20px;
+  float: right;
+}
+
+.question{
+    width: 100%;
+    height: 44px;
+    border: none;
+    padding-left: 2%;
+    font-size: 1rem;
+    margin-bottom: 1%;
+    background: #ececec;
+    border-radius: 4px;
+}
+
+.radio{
+  padding-bottom: 1%;
+  padding-left: 2%;
+  color: #eb7125;
+}
+
+.instruction{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #d6c6c6;
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+  color: #65658a;
+}

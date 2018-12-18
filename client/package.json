@@ -1,0 +1,79 @@
+{
+  "name": "Certent",
+  "description": "Certent Conf App",
+  "author": {
+    "name": "Saptarshi",
+    "url": "https://github.com/sap9433/certent"
+  },
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "Certent Conf App"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "create-react-app",
+    "react-loadable",
+    "react-redux",
+    "react-router",
+    "redux-observable",
+    "boilerplate"
+  ],
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:8081",
+      "secure": false
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.4.3",
+    "@material-ui/icons": "^2.0.1",
+    "@material-ui/lab": "^1.0.0-alpha.11",
+    "babel-core": "6.26.3",
+    "font-awesome": "^4.7.0",
+    "highcharts": "^6.1.1",
+    "highcharts-react-official": "^1.3.1",
+    "history": "^4.7.2",
+    "localStorage": "^1.0.3",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.1.2",
+    "qs": "^6.5.2",
+    "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-collapsible": "^2.2.0",
+    "react-countdown-now": "^1.3.0",
+    "react-dom": "^16.4.0",
+    "react-loadable": "^5.4.0",
+    "react-modal": "^3.5.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "^1.1.4",
+    "react-sliding-pane": "^2.0.2",
+    "react-sortable-hoc": "^0.8.3",
+    "redux": "4.0.0",
+    "redux-observable": "1.0.0",
+    "rxjs": "^6.2.0",
+    "rxjs-compat": "^6.2.0",
+    "styled-components": "^3.4.2"
+  },
+  "devDependencies": {
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "^1.3.0",
+    "react-test-renderer": "^16.4.2",
+    "redux-devtools": "3.4.1",
+    "source-map-explorer": "^1.5.0"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
